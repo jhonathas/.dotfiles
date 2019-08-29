@@ -22,6 +22,7 @@ apps=(
   zsh
   vim
   nvim
+  shell
 )
 
 # device apps
