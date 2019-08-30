@@ -15,6 +15,7 @@ brew 'python3'
 brew 'vim'
 brew 'nvim'
 brew 'tmux'
+brew 'grv'
 
 # casks
 cask 'google-chrome'
