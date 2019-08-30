@@ -28,5 +28,16 @@ cask '1password'
 cask 'dash'
 cask 'alacritty'
 cask 'istat-menus'
+cask 'discord'
+cask 'slack'
+cask 'libreoffice'
+cask 'emacs'
+cask 'macvim'
+cask 'rowanj-gitx'
+cask 'iterm2'
 
+# mac apple store
+mas 'Airmail 3', id: 918858936
+mas 'Navicat Essentials for PostgreSQL', id: 466725643
+mas 'Magnet', id: 441258766
 
