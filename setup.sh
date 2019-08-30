@@ -2,18 +2,6 @@
 
 device=$1
 
-# available devices
-devices=(
-  macbook_air
-  imac
-)
-
-# check argument
-if [[ ! "${device}" =~ ^$devices ]]; then
-  echo "ERROR: ${device} is not available device"
-  exit
-fi
-
 # apps for all devices
 apps=(
   git
@@ -23,6 +11,7 @@ apps=(
   vim
   nvim
   shell
+  brew
 )
 
 # device apps
