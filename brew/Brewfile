@@ -9,6 +9,7 @@ tap 'caskroom/versions' || true
 
 # install packages
 brew 'git'
+brew 'git-flow-avh'
 brew 'tree'
 brew 'python'
 brew 'python3'
