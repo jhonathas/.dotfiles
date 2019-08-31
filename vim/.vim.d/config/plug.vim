@@ -44,7 +44,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'benmills/vimux'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 
 " Vim textobj user
 Plug 'kana/vim-textobj-user'

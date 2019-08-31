@@ -36,9 +36,15 @@ cask 'emacs'
 cask 'macvim'
 cask 'rowanj-gitx'
 cask 'iterm2'
+cask 'postman'
+cask 'poedit'
+cask 'iris'
 
 # mac apple store
 mas 'Airmail 3', id: 918858936
 mas 'Navicat Essentials for PostgreSQL', id: 466725643
 mas 'Magnet', id: 441258766
+mas 'Pages', id: 409201541
+mas 'Keynote', id: 409183694
+mas 'Numbers', id: 409203825
 
