@@ -9,7 +9,7 @@ brew bundle
 
 # Tmux
 
-## Tmux
+## General
 
 Description            |      Map         |
 -----------------------|------------------|
