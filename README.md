@@ -6,6 +6,11 @@
   * [Session](#session)
   * [Window](#window)
   * [Pane](#pane)
+* [Vim](#vim)
+  * [Project](#project)
+  * [Surround](#surround)
+  * [Programming](#programming)
+  * [Tmux](#tmux)
 
 
 # Install
@@ -73,4 +78,41 @@ Copy mode                          | `<leader> [`          |
 Clear pane                         | `<leader> ;`          |
 Command line                       | `<leader> :`          |
 
-  
+# Vim
+
+## Project
+
+Description                        |      Map                |
+-----------------------------------|-------------------------|  
+Fuzzy search                       | `<leader> f`            |
+List buffers                       | `<leader> b`            |
+Grep search                        | `<leader> g`            |
+
+## Surround
+
+Description                        |      Map                |
+-----------------------------------|-------------------------|  
+Surround                           | `(visual) S`            |
+
+## Programming
+
+Description                        |      Map                |
+-----------------------------------|-------------------------|  
+Swap to test and definition        | `,gt`                   |
+Go to definition                   | `,gd`                   |
+Run test in buffer                 | `,tb`                   |
+Repeate the last test              | `,tr`                   |
+
+## Tmux
+
+Description                        |      Map                |
+-----------------------------------|-------------------------|  
+Go to tmux test on vi mode         | `<leader> vi`           |
+Increase tmux test window          | `<leader> vk`           |
+Decrease tmux test window          | `<leader> vj`           |
+Toogle tmux test window            | `<leader> vv`           |
+
+
+
+
+
