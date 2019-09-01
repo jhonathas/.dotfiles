@@ -1,3 +1,13 @@
+# Dotfiles
+
+* [Install](#install)
+* [Tmux](#tmux)
+  * [General](#general)
+  * [Session](#session)
+  * [Window](#window)
+  * [Pane](#pane)
+
+
 # Install
 
 ```bash
