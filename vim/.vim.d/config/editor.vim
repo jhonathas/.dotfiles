@@ -53,12 +53,8 @@ nnoremap <Leader>w<Tab> <C-W>p
 " cancel highlighting
 nnoremap <silent> <Esc><Esc> :let @/=""<CR>
 
-" copy and paste
-" vmap <C-c> "+yi<ESC>
-" vmap <C-x> "+c<ESC>
-" vmap <C-v> c<ESC>"+p
-" imap <C-v> <ESC>"+pa
-" noremap Y y$
-" vmap y ygv<Esc>
-
-" unmap <leader>sc
+" next/previous highlighting
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz

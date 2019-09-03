@@ -13,6 +13,7 @@ if [ -z "$TMUX" ]; then
   tmux attach -t default || tmux new -s default
 fi
 
+export LC_ALL=en_US.UTF-8
 export EDITOR='nvim'
 export STOW_DIR=$HOME/.dotfiles
 

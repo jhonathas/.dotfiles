@@ -38,7 +38,7 @@ cask 'rowanj-gitx'
 cask 'iterm2'
 cask 'postman'
 cask 'poedit'
-cask 'iris'
+# cask 'iris'
 
 # mac apple store
 mas 'Airmail 3', id: 918858936
