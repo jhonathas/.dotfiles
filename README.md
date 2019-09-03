@@ -7,10 +7,13 @@
   * [Window](#window)
   * [Pane](#pane)
 * [Vim](#vim)
+  * [General](#general-1)
   * [Project](#project)
   * [Surround](#surround)
   * [Programming](#programming)
   * [Tmux](#tmux)
+  * [Easymotion](#easymotion)
+
 
 
 # Install
@@ -80,6 +83,15 @@ Command line                       | `<leader> :`          |
 
 # Vim
 
+## General
+Description                        |      Map                |
+-----------------------------------|-------------------------|  
+Quit window                        | `<leader> q`            |
+Quit all window (force)            | `<leader> Q`            |
+Save                               | `<leader> s`            |
+Save as                            | `<leader> S`            |
+Reload                             | `<leader> E`            |
+
 ## Project
 
 Description                        |      Map                |
@@ -111,6 +123,15 @@ Go to tmux test on vi mode         | `<leader> vi`           |
 Increase tmux test window          | `<leader> vk`           |
 Decrease tmux test window          | `<leader> vj`           |
 Toogle tmux test window            | `<leader> vv`           |
+
+## Easymotion
+
+Description                        |      Map                |
+-----------------------------------|-------------------------|  
+Easymotion by 1 character          | `<leader> a`            |
+Easymotion by word                 | `<leader> w`            |
+Easymotion by lines top            | `<leader> k`            |
+Easymotion by lines bottom         | `<leader> j`            |
 
 
 
