@@ -22,7 +22,7 @@ au FileType * set fo-=c fo-=r fo-=o
 " ===================
 
 set background=dark    " set dark background
-colorscheme nova      " set theme
+colorscheme nova       " set theme
 
 if has('gui_running')
   set macligatures
@@ -45,10 +45,6 @@ nnoremap <leader>S :saveas <C-R>=expand("%")<CR>
 " nnoremap <leader>fA :saveas <C-R>=expand("%:p:h")<CR>/
 nnoremap <leader>E :edit!<CR>
 nnoremap <leader><Tab> :b#<CR>
-
-" closes other windows
-nnoremap <Leader>wm <C-W>o
-nnoremap <Leader>w<Tab> <C-W>p
 
 " cancel highlighting
 nnoremap <silent> <Esc><Esc> :let @/=""<CR>

@@ -6,7 +6,7 @@ nmap <leader>a <Plug>(easymotion-s)
 " nmap <leader>s <Plug>(easymotion-overwin-f)
 
 " Move to word
-map  <Leader>A <Plug>(easymotion-bd-w)
+map <Leader>w <Plug>(easymotion-bd-w)
 " nmap <Leader>W <Plug>(easymotion-overwin-w)
 " or
 " `s{char}{char}{label}`
