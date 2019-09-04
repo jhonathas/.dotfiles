@@ -98,7 +98,7 @@ Description                        |      Map                |
 -----------------------------------|-------------------------|  
 Fuzzy search                       | `<leader> f`            |
 List buffers                       | `<leader> b`            |
-Grep search                        | `<leader> g`            |
+Grep search                        | `<leader> F`            |
 
 ## Surround
 
@@ -110,10 +110,10 @@ Surround                           | `(visual) S`            |
 
 Description                        |      Map                |
 -----------------------------------|-------------------------|  
-Swap to test and definition        | `,gt`                   |
-Go to definition                   | `,gd`                   |
-Run test in buffer                 | `,tb`                   |
-Repeate the last test              | `,tr`                   |
+Swap to test and definition        | `<leader>gt`            |
+Go to definition                   | `<leader>gd`            |
+Run test in buffer                 | `<leader>tb`            |
+Repeate the last test              | `<leader>tr`            |
 
 ## Tmux
 
