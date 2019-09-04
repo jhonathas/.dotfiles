@@ -42,7 +42,6 @@ endif
 " file
 nnoremap <Leader>s :update<CR>
 nnoremap <leader>S :saveas <C-R>=expand("%")<CR>
-" nnoremap <leader>fA :saveas <C-R>=expand("%:p:h")<CR>/
 nnoremap <leader>E :edit!<CR>
 nnoremap <leader><Tab> :b#<CR>
 
@@ -54,3 +53,9 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz
+
+" new lines
+nnoremap <leader>o o<cr>
+nnoremap <leader>O O<esc>O
+nnoremap <leader>p o<esc>p
+nnoremap <leader>P O<esc>P
