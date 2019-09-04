@@ -8,7 +8,7 @@ endfunction
 nnoremap <silent> <leader>f :call FZFOpen(':Files')<CR>
 nnoremap <silent> <leader>b :call FZFOpen(':Buffers')<CR>
 nnoremap <silent> <leader>r :call FZFOpen(':History')<CR>
-nnoremap <silent> <leader>g :call FZFOpen(':Ag')<CR>
+nnoremap <silent> <leader>F :call FZFOpen(':Ag')<CR>
 " nnoremap <silent> <leader>pc :call FZFOpen(':Commands')<CR>
 " nnoremap <silent> <leader>pl :call FZFOpen(':BLines')<CR>
 " nnoremap <silent> <leader>pm :call FZFOpen(':Marks')<CR>
