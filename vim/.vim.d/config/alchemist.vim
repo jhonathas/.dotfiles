@@ -1,1 +1,1 @@
-let g:alchemist_tag_map = ',gd'
+let g:alchemist_tag_map = '<leader>gd'
