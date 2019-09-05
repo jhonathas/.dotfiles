@@ -9,14 +9,14 @@ unset MAILCHECK # disable "you have mail" warning
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [ -z "$TMUX" ]; then
-  tmux attach -t default || tmux new -s default
-fi
+# if [ -z "$TMUX" ]; then
+#   tmux attach -t default || tmux new -s default
+# fi
 
 export LC_ALL=en_US.UTF-8
 export EDITOR='nvim'
 export STOW_DIR=$HOME/.dotfiles
 
-source ~/.config/tmuxinator/tmuxinator.zsh
+# source ~/.config/tmuxinator/tmuxinator.zsh
 
-alias tmux="tmux -u"
+# alias tmux="tmux -u"

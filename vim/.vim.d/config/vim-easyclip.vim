@@ -8,5 +8,3 @@ nmap xx <Plug>MoveMotionLinePlug
 noremap X x
 
 " let g:EasyClipUseSubstituteDefaults=1
-
-set clipboard=unnamed

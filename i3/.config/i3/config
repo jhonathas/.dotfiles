@@ -173,7 +173,7 @@ bindsym $mod+r mode "resize"
 
 # Ppolybar
 
-exec --no-startup-id polybar -r mybar 
+exec --no-startup-id polybar -r mybar
 
 # i3-gaps
 
@@ -186,3 +186,18 @@ gaps outer 10
 # Only enable gaps on a workspace when there is at least one container
 # smart_gaps on
 smart_borders on
+
+# keyboard config
+exec --no-startup-id xset r rate 185 100
+exec "setxkbmap -model pc104 -layout us_intl"
+
+# mouse config
+focus_follows_mouse no
+mouse_warping       none
+# get the xinput id
+#  xinput --list
+#  xinput --watch-props <id>
+exec "xinput --set-prop 15 'libinput Natural Scrolling Enabled' 1"
+
+# redshift
+exec --no-startup-id redshift

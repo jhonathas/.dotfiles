@@ -1,5 +1,13 @@
 sudo apt-get install git
 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+wget https://go.skype.com/skypeforlinux-64.deb
+sudo dpkg -i skypeforlinux-64.deb
+
+# editar o /etc/pulse/default.ap
+
 # i3
 sudo add-apt-repository ppa:kgilmer/speed-ricer
 sudo apt-get update
@@ -15,6 +23,9 @@ sudo apt-get install rxvt-unicode xsel
 # alacritty
 sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt-get install alacritty
+
+# redshift
+sudo apt-get install redshift
 
 # st terminal
 sudo apt-get install libx11-dev libxft-dev libxext-dev

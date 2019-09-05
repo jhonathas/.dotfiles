@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug '/usr/local/opt/fzf'
+Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-better-default'
 Plug 'mileszs/ack.vim'
