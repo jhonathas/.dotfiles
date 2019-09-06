@@ -19,3 +19,6 @@ windows:
   - kibana:
       - cd vendor/kibana
       - ./bin/kibana
+  - dotfiles:
+      - cd ~/.dotfiles
+      - nvim

@@ -17,4 +17,4 @@ endfunction
 
 noremap <silent> <leader>vv :call TmuxToggleZoom()<CR>
 noremap <silent> <leader>vj :call TmuxSetSize(7)<CR>
-noremap <silent> <leader>vk :call TmuxSetSize(23)<CR>
+noremap <silent> <leader>vk :call TmuxSetSize(30)<CR>
