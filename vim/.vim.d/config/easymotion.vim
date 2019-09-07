@@ -2,7 +2,7 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
-nmap <leader>a <Plug>(easymotion-s)
+nmap <leader>e <Plug>(easymotion-s)
 " nmap <leader>s <Plug>(easymotion-overwin-f)
 
 " Move to word
