@@ -72,6 +72,9 @@ bindsym $mod+v split h
 # split in vertical orientation
 bindsym $mod+s split v
 
+# toggle split orientation
+bindsym $mod+q split toggle
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -201,3 +204,9 @@ exec "xinput --set-prop 15 'libinput Natural Scrolling Enabled' 1"
 
 # redshift
 exec --no-startup-id redshift
+
+# background images
+exec --no-startup-id feh --bg-scale ~/.config/i3/wp/Monsoon-1-1024x576.jpg
+
+# suspend
+bindsym $mod+x exec i3-exit

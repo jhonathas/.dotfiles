@@ -6,6 +6,14 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 wget https://go.skype.com/skypeforlinux-64.deb
 sudo dpkg -i skypeforlinux-64.deb
 
+sudo snap install mailspring
+
+sudo snap install grv
+
+sudo apt install feh
+
+sudo apt install xbacklight
+
 # editar o /etc/pulse/default.ap
 
 # i3

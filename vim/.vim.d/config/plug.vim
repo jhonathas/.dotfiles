@@ -1,6 +1,12 @@
 call plug#begin('~/.vim/plugged')
 
-Plug '/usr/bin/fzf'
+if filereadable("/usr/share/doc/fzf/examples")
+  Plug '/usr/share/doc/fzf/examples'
+elseif filereadable("/usr/local/opt/fzf")
+  Plug '/usr/local/opt/fzf'
+endif
+
+Plug '/usr/share/doc/fzf/examples'
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-better-default'
 Plug 'mileszs/ack.vim'
