@@ -1,4 +1,4 @@
-sudo apt-get install git
+sudo apt-get install git git-flow
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -35,18 +35,13 @@ sudo apt-get install alacritty
 # redshift
 sudo apt-get install redshift
 
-# st terminal
-sudo apt-get install libx11-dev libxft-dev libxext-dev
-cd ~/.config
-wget https://dl.suckless.org/st/st-0.8.2.tar.gz
-tar -xf st-0.8.2.tar.gz
-mv st-0.8.2.tar.gz st
-cp -R cp st-backup
-sudo make clean install
-wget https://st.suckless.org/patches/solarized/st-no_bold_colors-0.5.diff
-wget https://st.suckless.org/patches/solarized/st-no_bold_colors-0.6.diff
-wget https://st.suckless.org/patches/solarized/st-solarized-light-0.7.diff
-wget https://st.suckless.org/patches/solarized/st-no_bold_colors-0.8.1.diff
-wget https://st.suckless.org/patches/solarized/st-no_bold_colors-20170623-b331da5.diff
+sudo apt-get -y install linux-headers-$(uname -r) build-essential libreadline-dev autoconf m4 libncurses5-dev libwxgtk3.0-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop
+asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git
+asdf plugin-add redis https://github.com/smashedtoatoms/asdf-redis.git
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 
-
+asdf install ruby 2.6.4
+asdf global ruby 2.6.4
+gem install tmuxinator
