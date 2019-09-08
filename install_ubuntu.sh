@@ -6,6 +6,9 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 wget https://go.skype.com/skypeforlinux-64.deb
 sudo dpkg -i skypeforlinux-64.deb
 
+wget https://linux.dropbox.com/packages/ubuntu/dropbox_2019.02.14_amd64.deb
+sudo dpkg -i dropbox_2019.02.14_amd64.deb
+
 sudo snap install mailspring
 
 sudo snap install grv
