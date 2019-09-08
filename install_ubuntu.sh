@@ -10,11 +10,12 @@ sudo snap install mailspring
 
 sudo snap install grv
 
+sudo snap install spotify
+sudo snap install postman
+
 sudo apt install feh
 
 sudo apt install xbacklight
-
-# editar o /etc/pulse/default.ap
 
 # i3
 sudo add-apt-repository ppa:kgilmer/speed-ricer
