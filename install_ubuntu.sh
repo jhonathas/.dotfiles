@@ -1,51 +1,76 @@
-sudo apt-get install git git-flow
-
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-
-wget https://go.skype.com/skypeforlinux-64.deb
-sudo dpkg -i skypeforlinux-64.deb
-
-wget https://linux.dropbox.com/packages/ubuntu/dropbox_2019.02.14_amd64.deb
-sudo dpkg -i dropbox_2019.02.14_amd64.deb
-
-sudo snap install mailspring
-
-sudo snap install grv
-
-sudo snap install spotify
-sudo snap install postman
-
-sudo apt install feh
-
-sudo apt install xbacklight
-
-# i3
-sudo add-apt-repository ppa:kgilmer/speed-ricer
 sudo apt-get update
-sudo apt-get install i3
+sudo apt-get upgrade -y
 
-# i3-gaps
-sudo apt-get install i3-gaps
+ppa_list=(
+  ppa:kgilmer/speed-ricer
+  ppa:mmstick76/alacritty
+)
 
-# polybar
-sudo apt-get install polybar
-sudo apt-get install rxvt-unicode xsel
+apt_list=(
+  # dependencies
+  linux-headers-$(uname -r)
+  build-essential
+  libreadline-dev
+  autoconf
+  m4
+  libncurses5-dev
+  libwxgtk3.0-dev
+  libgl1-mesa-dev
+  libglu1-mesa-dev
+  libpng-dev
+  libssh-dev
+  unixodbc-dev
+  xsltproc
+  fop
+  # tools
+  htop
+  git
+  git-flow
+  alacritty
+  feh
+  xbacklight
+  redshift
+  # i3
+  i3
+  i3-gaps
+  polybar
+)
 
-# alacritty
-sudo add-apt-repository ppa:mmstick76/alacritty
-sudo apt-get install alacritty
+deb_list=(
+  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  https://go.skype.com/skypeforlinux-64.deb
+  https://linux.dropbox.com/packages/ubuntu/dropbox_2019.02.14_amd64.deb
+)
 
-# redshift
-sudo apt-get install redshift
+snap_list=(
+  mailspring
+  grv
+  spotify
+  postman
+)
 
-sudo apt-get -y install linux-headers-$(uname -r) build-essential libreadline-dev autoconf m4 libncurses5-dev libwxgtk3.0-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop
+sudo add-apt-repository -y ${ppa_list[@]}
+sudo apt-get -y install ${apt_list[@]}
+sudo snap -y install ${snap_list[@]}
+
+wget -i ${deb_list[@]}
+sudo dpkg -R --install dependencies/
+
+rm -rf dependencies
+
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.4
+
 asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
 asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git
 asdf plugin-add redis https://github.com/smashedtoatoms/asdf-redis.git
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 
+asdf install erlang
+asdf install elixir
+asdf install redis
+asdf install postgres
 asdf install ruby 2.6.4
 asdf global ruby 2.6.4
+
 gem install tmuxinator
