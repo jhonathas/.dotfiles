@@ -30,6 +30,8 @@ apt_list=(
   feh
   xbacklight
   redshift
+  nmap
+  poedit
   # i3
   i3
   i3-gaps

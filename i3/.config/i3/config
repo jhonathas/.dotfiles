@@ -103,13 +103,13 @@ bindsym $mod+f fullscreen toggle
 set $ws1 "1: WEB"
 set $ws2 "2: CODING"
 set $ws3 "3: CHAT / EMAIL"
-set $ws4 "4: FUN"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10: FUN"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -245,10 +245,11 @@ mouse_warping       none
 exec "xinput --set-prop 15 'libinput Natural Scrolling Enabled' 1"
 
 # redshift
-exec_always --no-startup-id "if ! pgrep -x redshift >/dev/null; then redshift; fi"
+exec_always --no-startup-id xrandr --output eDP --brightness 0.5
+exec_always --no-startup-id "killall -q redshift; redshift"
+# exec_always --no-startup-id "if ! pgrep -x redshift >/dev/null; then redshift; fi"
 # get the screen id
 #  xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1
-exec_always --no-startup-id xrandr --output eDP --brightness 0.6
 
 # background images
 exec --no-startup-id feh --bg-scale ~/.config/i3/wp/Monsoon-1-1024x576.jpg
@@ -273,5 +274,7 @@ mode "$mode_system" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-
 bindsym $mod+Escape mode "$mode_system"
+
+# Compton
+exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
