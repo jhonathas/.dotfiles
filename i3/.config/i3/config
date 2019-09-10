@@ -277,4 +277,4 @@ mode "$mode_system" {
 bindsym $mod+Escape mode "$mode_system"
 
 # Compton
-exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
+exec_always --no-startup-id "killall -q compton; compton"
