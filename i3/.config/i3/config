@@ -245,6 +245,7 @@ smart_borders on
 # keyboard config
 exec --no-startup-id xset r rate 200 50
 exec "setxkbmap -model pc104 -layout us_intl"
+exec_always "setxkbmap -option ctrl:swapcaps"
 
 # mouse config
 focus_follows_mouse no

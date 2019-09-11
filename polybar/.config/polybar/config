@@ -56,9 +56,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 # alsa, xkeyboard, wlan, eth, filesystem, mpd
-modules-left = bspwm memory cpu temperature
+modules-left = bspwm memory cpu temperature battery
 modules-center = i3
-modules-right =  pulseaudio xbacklight battery powermenu date
+modules-right =  pulseaudio xbacklight powermenu date
 
 tray-position = right
 tray-padding = 2
