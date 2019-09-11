@@ -17,9 +17,9 @@ export LC_ALL=en_US.UTF-8
 export EDITOR='nvim'
 export STOW_DIR=$HOME/.dotfiles
 
-
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 
 source ~/.config/tmuxinator/tmuxinator.zsh

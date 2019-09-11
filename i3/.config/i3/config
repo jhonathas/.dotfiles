@@ -245,9 +245,8 @@ mouse_warping       none
 exec "xinput --set-prop 15 'libinput Natural Scrolling Enabled' 1"
 
 # redshift
-exec_always --no-startup-id xrandr --output eDP --brightness 0.5
+exec_always --no-startup-id xrandr --output eDP --brightness 1
 exec_always --no-startup-id "killall -q redshift; redshift"
-# exec_always --no-startup-id "if ! pgrep -x redshift >/dev/null; then redshift; fi"
 # get the screen id
 #  xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1
 
