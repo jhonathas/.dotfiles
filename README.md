@@ -20,6 +20,9 @@
 
 ```bash
 git clone git@github.com:diegonogueira/dotfiles.git ~/.dotfiles
+cd .dotfiles
+./setup.sh
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install mas
 brew bundle
@@ -49,7 +52,7 @@ List all windows       | `:ls` or `$ tmux ls`
 ## Window
 
 Description                        |      Map              |
------------------------------------|-----------------------|  
+-----------------------------------|-----------------------|
 Create a new window (with prompt)  | `<leader> c`          |
 Create a new window (process name) | `<leader> C`          |
 List all windows                   | `<leader> w`          |
@@ -65,7 +68,7 @@ Find window                        | `<leader> f`          |
 ## Pane
 
 Description                        |      Map              |
------------------------------------|-----------------------|  
+-----------------------------------|-----------------------|
 Split horizontally                 | `<leader> s`          |
 Split Vertically                   | `<leader> v`          |
 Go to left pane                    | `<leader> h`          |
@@ -85,7 +88,7 @@ Command line                       | `<leader> :`          |
 
 ## General
 Description                        |      Map                |
------------------------------------|-------------------------|  
+-----------------------------------|-------------------------|
 Quit window                        | `<leader> q`            |
 Quit all window (force)            | `<leader> Q`            |
 Save                               | `<leader> s`            |
@@ -95,7 +98,7 @@ Reload                             | `<leader> E`            |
 ## Project
 
 Description                        |      Map                |
------------------------------------|-------------------------|  
+-----------------------------------|-------------------------|
 Fuzzy search                       | `<leader> f`            |
 List buffers                       | `<leader> b`            |
 Grep search                        | `<leader> F`            |
@@ -103,13 +106,13 @@ Grep search                        | `<leader> F`            |
 ## Surround
 
 Description                        |      Map                |
------------------------------------|-------------------------|  
+-----------------------------------|-------------------------|
 Surround                           | `(visual) S`            |
 
 ## Programming
 
 Description                        |      Map                |
------------------------------------|-------------------------|  
+-----------------------------------|-------------------------|
 Swap to test and definition        | `<leader>gt`            |
 Go to definition                   | `<leader>gd`            |
 Run test in buffer                 | `<leader>tb`            |
@@ -118,7 +121,7 @@ Repeate the last test              | `<leader>tr`            |
 ## Tmux
 
 Description                        |      Map                |
------------------------------------|-------------------------|  
+-----------------------------------|-------------------------|
 Go to tmux test on vi mode         | `<leader> vi`           |
 Increase tmux test window          | `<leader> vk`           |
 Decrease tmux test window          | `<leader> vj`           |
@@ -127,7 +130,7 @@ Toogle tmux test window            | `<leader> vv`           |
 ## Easymotion
 
 Description                        |      Map                |
------------------------------------|-------------------------|  
+-----------------------------------|-------------------------|
 Easymotion by 1 character          | `<leader> a`            |
 Easymotion by word                 | `<leader> w`            |
 Easymotion by lines top            | `<leader> k`            |

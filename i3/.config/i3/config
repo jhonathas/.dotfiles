@@ -244,22 +244,15 @@ smart_borders on
 
 # keyboard config
 exec --no-startup-id xset r rate 200 50
-exec "setxkbmap -model pc104 -layout us_intl"
-exec_always "setxkbmap -option ctrl:swapcaps"
 
 # mouse config
 focus_follows_mouse no
 mouse_warping       none
-# get the xinput id
-#  xinput --list
-#  xinput --watch-props <id>
-exec "xinput --set-prop 15 'libinput Natural Scrolling Enabled' 1"
 
 # redshift
-exec_always --no-startup-id xrandr --output eDP --brightness 0.5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 exec_always --no-startup-id "killall -q redshift; sleep 4; redshift"
-# get the screen id
-#  xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1
 
 # background images
 exec --no-startup-id feh --bg-scale ~/.config/i3/wp/Monsoon-1-1024x576.jpg
@@ -287,4 +280,7 @@ mode "$mode_system" {
 bindsym $mod+Escape mode "$mode_system"
 
 # Compton
-exec_always --no-startup-id "killall -q compton; compton"
+exec_always --no-startup-id "killall -q compton; sleep 2 ; compton"
+
+# Dropbox
+exec --no-startup-id dropbox start

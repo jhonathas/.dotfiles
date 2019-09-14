@@ -5,6 +5,12 @@ if empty(glob("~/.vim/autoload/plug.vim"))
   autocmd VimEnter * silent! PlugInstall
 endif
 
+if empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
+  silent! execute '!curl --create-dirs -fsSLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * silent! PlugInstall
+  " autocmd VimEnter * silent! UpdateRemotePlugins
+endif
+
 call plug#begin('~/.vim/plugged')
 
 if !empty(glob("/usr/share/doc/fzf/examples"))
