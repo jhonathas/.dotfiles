@@ -7,3 +7,4 @@
 ./_scripts/stow.sh
 ./_scripts/asdf.sh
 ./_scripts/vim.sh
+cd $PRIVATE_DOTFILE_PATH && ./setup.sh
