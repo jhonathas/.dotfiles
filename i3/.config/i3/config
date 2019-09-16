@@ -247,16 +247,8 @@ mouse_warping       none
 
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-exec_always --no-startup-id "killall -q redshift; sleep 4; redshift"
-
-# =====================
-# Sound config
-# =====================
-
-exec_always --no-startup-id amixer sset 'Mic Boost' 100
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+exec_always --no-startup-id "redshift -x; killall -q redshift; sleep 4; redshift"
+exec_always --no-startup-id xrandr --output eDP --brightness 0.5
 
 # =====================
 # Power config
@@ -276,3 +268,12 @@ mode "$mode_system" {
   bindsym Escape mode "default"
 }
 bindsym $mod+Escape mode "$mode_system"
+
+# =====================
+# Sound config
+# =====================
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+exec_always --no-startup-id amixer sset 'Mic Boost' 100
