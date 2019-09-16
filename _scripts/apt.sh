@@ -56,6 +56,7 @@ apt_list=(
   dirmngr
   gpg
   # tools
+  inxi
   curl
   stow
   htop
