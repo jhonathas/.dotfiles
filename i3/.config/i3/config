@@ -39,9 +39,10 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # Others apps
-set $mode_apps Apps (c) Chrome, (d) DBeaver,
+set $mode_apps Apps: (c) Chrome, (s) Skype, (d) DBeaver,
 mode "$mode_apps" {
   bindsym c exec --no-startup-id google-chrome, mode "default"
+  bindsym s exec --no-startup-id skypeforlinux, mode "default"
   bindsym d exec --no-startup-id dbeaver, mode "default"
 
   # back to normal: Enter or Escape
@@ -49,6 +50,31 @@ mode "$mode_apps" {
   bindsym Escape mode "default"
 }
 bindsym $mod+a mode "$mode_apps"
+
+# =====================
+# Scratchpad
+# =====================
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# remove a floating window from scratchpad
+bindsym $mod+x floating disable
+
+set $mode_scratchpad Scratchpad: (w) WhatsApp, (s) Skype, (m) Mail,
+mode "$mode_scratchpad" {
+  bindsym s [class="Skype"] scratchpad show, mode "default"
+  bindsym w [class="chrome"] scratchpad show, mode "default"
+  bindsym m [class="Mailspring"] scratchpad show, mode "default"
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+s mode "$mode_scratchpad"
 
 # =====================
 # Rofi menu
@@ -182,7 +208,7 @@ for_window [class=".*"] border pixel 4
 
 # default gaps
 gaps inner 20
-gaps outer 10
+gaps outer 0
 
 # gaps mode
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -248,7 +274,7 @@ mouse_warping       none
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 exec_always --no-startup-id "redshift -x; killall -q redshift; sleep 4; redshift"
-exec_always --no-startup-id xrandr --output eDP --brightness 0.5
+exec_always --no-startup-id xrandr --output eDP --brightness 0.7
 
 # =====================
 # Power config
@@ -276,4 +302,4 @@ bindsym $mod+Escape mode "$mode_system"
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-exec_always --no-startup-id amixer sset 'Mic Boost' 100
+exec_always --no-startup-id "sleep 2; amixer sset 'Mic Boost' 100"
