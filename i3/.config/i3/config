@@ -64,11 +64,11 @@ bindsym $mod+minus scratchpad show
 # remove a floating window from scratchpad
 bindsym $mod+x floating disable
 
-set $mode_scratchpad Scratchpad: (w) WhatsApp, (s) Skype, (m) Mail,
+set $mode_scratchpad Scratchpad: (w) WhatsApp, (s) Skype, (e) Email,
 mode "$mode_scratchpad" {
   bindsym s [class="Skype"] scratchpad show, mode "default"
   bindsym w [class="chrome"] scratchpad show, mode "default"
-  bindsym m [class="Mailspring"] scratchpad show, mode "default"
+  bindsym e [class="Mailspring"] scratchpad show, mode "default"
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
