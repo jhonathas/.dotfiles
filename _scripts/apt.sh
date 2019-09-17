@@ -80,6 +80,7 @@ apt_list=(
   i3-gaps
   polybar
   rofi
+  compton
 )
 
 for a in ${apt_list[@]}

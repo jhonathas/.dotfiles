@@ -18,7 +18,7 @@ alias gffp="git flow feature publish "
 alias gfff="git flow feature finish "
 alias gfft="git flow feature track"
 
-alias vimedit="cd ~/.vim.d; mvim"
+alias edotfiles="cd ~/.dotfiles; nvim"
 
 # Elixir
 
