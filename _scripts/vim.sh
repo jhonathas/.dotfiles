@@ -11,5 +11,6 @@ vim +PlugUpdate +qall
 
 nvim +PlugInstall +qall
 nvim +PlugUpdate +qall
+nvim +UpdateRemotePlugins +qall
 
 echo "OK"

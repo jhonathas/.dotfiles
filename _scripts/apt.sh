@@ -55,6 +55,7 @@ apt_list=(
   fop
   dirmngr
   gpg
+  libxft-dev
   # tools
   inxi
   curl

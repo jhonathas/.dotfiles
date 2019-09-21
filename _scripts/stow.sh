@@ -7,9 +7,9 @@ echo "=============================="
 echo ""
 
 stow_to_remove_list=(
-  ./config/alacritty
-  ./config/i3
-  .zshrc
+  ~/.config/alacritty
+  ~/.config/i3
+  ~/.zshrc
 )
 
 for s in ${stow_to_remove_list[@]}
