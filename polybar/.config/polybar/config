@@ -53,10 +53,10 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-# alsa, xkeyboard, wlan, eth, filesystem, mpd, xwindow
+# alsa, xkeyboard, wlan, eth, filesystem, mpd, xwindow, xbacklight
 modules-left = bspwm i3
 modules-center = xwindow
-modules-right =  pulseaudio xbacklight memory cpu temperature battery date powermenu
+modules-right =  pulseaudio memory cpu temperature battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -183,7 +183,7 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = B
 
 bar-width = 10
 bar-indicator = |
@@ -259,7 +259,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = "%A, %d %b %Y  "
+date = "%a, %d %b %Y  "
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
@@ -274,7 +274,8 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+; format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 

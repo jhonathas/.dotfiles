@@ -21,7 +21,7 @@ font pango:monospace 11
 # background images
 # exec --no-startup-id feh --bg-scale ~/.config/i3/wp/Monsoon-1-1024x576.jpg
 exec_always --no-startup-id feh --bg-scale $(shuf -n1 -e ~/.config/i3/wp/*)
-bindsym $mod+Shift+w exec --no-startup-id feh --bg-scale $(shuf -n1 -e ~/Downloads/wallpapers/*)
+bindsym $mod+Shift+w exec --no-startup-id feh --bg-scale $(shuf -n1 -e ~/.config/i3/wp/*)
 
 # Compton
 exec_always --no-startup-id "killall -q compton; sleep 2 ; compton"
@@ -157,10 +157,11 @@ bindsym $mod+r mode "resize"
 # =====================
 
 # All workspaces names
-set $ws1 "1: WEB"
-set $ws2 "2: CODING"
-set $ws3 "3: CHAT / EMAIL"
-set $ws4 "4: FUN"
+# WEB, CODING, CHAT / EMAIL, FUN
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -304,7 +305,7 @@ bindsym $mod+Escape mode "$mode_system"
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-exec_always --no-startup-id "sleep 2; amixer sset 'Mic Boost' 100"
+exec_always --no-startup-id "sleep 4; amixer sset 'Mic Boost' 100"
 
 # =====================
 # Redshift

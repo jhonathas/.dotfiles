@@ -76,6 +76,7 @@ apt_list=(
   python3-neovim
   fzf
   silversearcher-ag
+  powertop
   # i3
   i3
   i3-gaps
