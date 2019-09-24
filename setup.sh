@@ -9,6 +9,7 @@ export PRIVATE_DOTFILE_SSH_REPO="git@github.com:diegonogueira/private-dotfiles.g
 export PRIVATE_DOTFILE_PATH=~/.private-dotfiles
 
 export DOTFILES_PATH=~/.dotfiles
+export DOTFILES_SSH_REPO="git@github.com:diegonogueira/dotfiles.git"
 
 # ==========================
 # Private dotfiles
@@ -18,6 +19,9 @@ if ! [ -d "$PRIVATE_DOTFILE_PATH" ]; then
   git clone $PRIVATE_DOTFILE_HTTPS_REPO $PRIVATE_DOTFILE_PATH
   cd $PRIVATE_DOTFILE_PATH
   git remote set-url origin "$PRIVATE_DOTFILE_SSH_REPO"
+
+  cd $DOTFILES_PATH
+  git remote set-url origin "$DOTFILES_SSH_REPO"
 
   echo ""
   echo "!! Stoped !!"

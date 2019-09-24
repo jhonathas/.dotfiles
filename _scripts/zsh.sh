@@ -9,3 +9,9 @@ echo ""
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
 
 sudo chsh -s $(which zsh)
+
+echo ""
+echo "OBS: If zsh is not working"
+echo "sudo nvim /etc/passwd"
+echo "find your name and change from /bin/bash to /bin/zsh"
+echo ""
