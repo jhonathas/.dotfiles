@@ -35,15 +35,22 @@ fi
 # Menu
 # ==========================
 
-echo ""
-echo "Choose the device to setup:"
-echo ""
-echo "1) iMac (OSX)"
-echo "2) iMac (Ubuntu) (i3wm)"
-echo "3) Macbook Air (OSX)"
-echo "4) Macbook Air (Ubuntu) (i3wm)"
-echo ""
-read -p "Device number: " device_opt
+if ! [[ -f "$DOTFILES_PATH/.current_menu" ]]; then
+  echo ""
+  echo "Choose the device to setup:"
+  echo ""
+  echo "1) iMac (OSX)"
+  echo "2) iMac (Ubuntu) (i3wm)"
+  echo "3) Macbook Air (OSX)"
+  echo "4) Macbook Air (Ubuntu) (i3wm)"
+  echo ""
+  read -p "Device number: " device_opt
+
+  echo $device_opt >> $DOTFILES_PATH/.current_menu
+else
+  echo "SIMMM"
+  device_opt=$(cat $DOTFILES_PATH/.current_menu)
+fi
 
 export DEVICE=""; export OS=""; export WM=""
 

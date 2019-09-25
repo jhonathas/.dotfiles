@@ -6,7 +6,15 @@ echo "Install vim and nvim plugs"
 echo "=============================="
 echo ""
 
-vim +PlugInstall +PlugUpdate +qall
-nvim +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall
+if ! [[ -f ~/.vim/autoload/plug.vim ]]; then
+  vim +PlugInstall +qall
+fi
+
+if ! [[ -f ~/.local/share/nvim/site/autoload/plug.vim ]]; then
+  nvim +PlugInstall +UpdateRemotePlugins +qall
+fi
+
+vim +PlugUpdate +qall
+nvim +PlugUpdate +qall
 
 echo "OK"
