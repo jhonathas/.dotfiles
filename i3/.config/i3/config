@@ -266,7 +266,7 @@ mode "$mode_gaps_outer" {
 smart_borders on
 
 # =====================
-# Keboard config
+# Keyboard config
 # =====================
 
 # set delay and repeat
@@ -321,4 +321,4 @@ exec_always --no-startup-id "killall -q redshift; sleep 4; redshift"
 # Screenshot
 # =====================
 
-bindsym $mod+Shift+S exec gnome-screenshot -i
+bindsym $mod+Shift+S exec gnome-screenshot -i -a
