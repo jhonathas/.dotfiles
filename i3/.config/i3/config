@@ -196,6 +196,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # rename workspace
 bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace:'
 
+# Workspaces cicle
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # =====================
 # Polybar
 # =====================
