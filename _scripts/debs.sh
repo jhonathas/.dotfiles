@@ -7,20 +7,31 @@ echo "=============================="
 echo ""
 
 deb_list=(
-  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  https://go.skype.com/skypeforlinux-64.deb
+  google-chrome-stable,https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  skypeforlinux,https://go.skype.com/skypeforlinux-64.deb
 )
 
 mkdir -p dependencies && cd dependencies
 
 for d in ${deb_list[@]}
 do
+  package=$(echo $d | cut -d',' -f1)
+  package_url=$(echo $d | cut -d',' -f2)
+
   echo ""
-  echo "---- download $d ----"
+  echo "---- download $package ----"
   echo ""
-  wget "$d"
+
+  dpkg -s $package &> /dev/null
+
+  if [ $? -eq 0 ]; then
+    echo "Ok"
+  else
+    wget "$package_url"
+  fi
 done
 
+echo ""
 sudo dpkg -i *.deb
 
 cd ..

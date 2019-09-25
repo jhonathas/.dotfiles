@@ -18,7 +18,14 @@ do
   echo ""
   echo "---- $s ----"
   echo ""
-  sudo snap install "$s"
+
+  snap list | grep $s &> /dev/null
+
+  if [ $? -eq 0 ]; then
+    echo "Ok"
+  else
+    sudo snap install "$s"
+  fi
 done
 
 snap_classic_list=(
@@ -30,5 +37,12 @@ do
   echo ""
   echo "---- $s --classic ----"
   echo ""
-  sudo snap install "$s" --classic
+
+  snap list | grep $s &> /dev/null
+
+  if [ $? -eq 0 ]; then
+    echo "Ok"
+  else
+    sudo snap install "$s" --classic
+  fi
 done
