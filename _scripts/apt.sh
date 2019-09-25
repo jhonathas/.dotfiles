@@ -70,6 +70,7 @@ apt_list=(
   htop
   git
   git-flow
+  gitk
   alacritty
   feh
   xbacklight
@@ -84,6 +85,7 @@ apt_list=(
   fzf
   silversearcher-ag
   powertop
+  autokey-gtk
   # i3
   i3-gaps
   polybar

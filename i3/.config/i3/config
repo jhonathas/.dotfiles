@@ -41,17 +41,17 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # Others apps
-set $mode_apps Apps: (c) Chrome, (s) Skype, (d) DBeaver,
-mode "$mode_apps" {
-  bindsym c exec --no-startup-id google-chrome, mode "default"
-  bindsym s exec --no-startup-id skypeforlinux, mode "default"
-  bindsym d exec --no-startup-id dbeaver, mode "default"
+# set $mode_apps Apps: (c) Chrome, (s) Skype, (d) DBeaver,
+# mode "$mode_apps" {
+#   bindsym c exec --no-startup-id google-chrome, mode "default"
+#   bindsym s exec --no-startup-id skypeforlinux, mode "default"
+#   bindsym d exec --no-startup-id dbeaver, mode "default"
 
-  # back to normal: Enter or Escape
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-bindsym $mod+a mode "$mode_apps"
+#   # back to normal: Enter or Escape
+#   bindsym Return mode "default"
+#   bindsym Escape mode "default"
+# }
+# bindsym $mod+a mode "$mode_apps"
 
 # =====================
 # Scratchpad
@@ -64,19 +64,19 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # remove a floating window from scratchpad
-bindsym $mod+x floating disable
+bindsym $mod+Shift+x floating disable
 
-set $mode_scratchpad Scratchpad: (w) WhatsApp, (s) Skype, (e) Email,
-mode "$mode_scratchpad" {
-  bindsym s [class="Skype"] scratchpad show, mode "default"
-  bindsym w [class="chrome"] scratchpad show, mode "default"
-  bindsym e [class="Mailspring"] scratchpad show, mode "default"
+# set $mode_scratchpad Scratchpad: (w) WhatsApp, (s) Skype, (e) Email,
+# mode "$mode_scratchpad" {
+#   bindsym s [class="Skype"] scratchpad show, mode "default"
+#   bindsym w [class="chrome"] scratchpad show, mode "default"
+#   bindsym e [class="Mailspring"] scratchpad show, mode "default"
 
-  # back to normal: Enter or Escape
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-bindsym $mod+s mode "$mode_scratchpad"
+#   # back to normal: Enter or Escape
+#   bindsym Return mode "default"
+#   bindsym Escape mode "default"
+# }
+# bindsym $mod+s mode "$mode_scratchpad"
 
 # =====================
 # Rofi menu
@@ -271,6 +271,7 @@ smart_borders on
 
 # set delay and repeat
 exec --no-startup-id xset r rate 200 50
+exec --no-startup-id autokey-gtk
 
 # =====================
 # Mouse config

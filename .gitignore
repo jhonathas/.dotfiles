@@ -1,0 +1,6 @@
+# Autokey
+
+/autokey/.config/autokey/autokey.json~
+/autokey/.config/autokey/autokey.log
+/autokey/.config/autokey/autokey.pid
+/autokey/.config/autokey/data/scripts/.*

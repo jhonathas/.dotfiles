@@ -10,6 +10,7 @@ stow_to_remove_list=(
   ~/.config/alacritty
   ~/.config/i3
   ~/.zshrc
+  ~/.config/autokey
 )
 
 for s in ${stow_to_remove_list[@]}
@@ -28,6 +29,7 @@ stow_list=(
   nvim
   shell
   htop
+  autokey
   alacritty-${DEVICE}-${OS}-${WM}
 )
 
