@@ -321,9 +321,15 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 exec_always --no-startup-id "redshift -x; xrandr --output eDP --brightness 0.4"
 exec_always --no-startup-id "killall -q redshift; sleep 4; redshift"
 
-#
 # =====================
 # Screenshot
 # =====================
 
 bindsym $mod+Shift+S exec gnome-screenshot -i -a
+
+# =====================
+# Alternating layout
+# =====================
+
+exec --no-startup-id ~/.config/i3/alternating_layouts.py
+

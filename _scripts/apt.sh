@@ -63,6 +63,8 @@ apt_list=(
   dirmngr
   gpg
   libxft-dev
+  x11-utils
+  python-pip
   # tools
   inxi
   curl
@@ -107,3 +109,5 @@ do
     sudo apt install -y "$a"
   fi
 done
+
+sudo pip install i3-py
