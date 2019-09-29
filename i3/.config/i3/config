@@ -288,12 +288,11 @@ mouse_warping       none
 # Power config
 # =====================
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (p) shutdown
 mode "$mode_system" {
   bindsym l exec --no-startup-id i3lock, mode "default"
   bindsym e exec --no-startup-id i3-msg exit, mode "default"
   bindsym s exec --no-startup-id systemctl suspend, mode "default"
-  bindsym h exec --no-startup-id systemctl hibernate, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym p exec --no-startup-id systemctl poweroff, mode "default"
 
@@ -319,6 +318,7 @@ exec_always --no-startup-id "sleep 4; amixer sset 'Mic Boost' 3"
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 exec_always --no-startup-id "redshift -x; xrandr --output eDP --brightness 0.4"
+exec_always --no-startup-id "redshift -x; xrandr --output eDP-1 --brightness 0.4"
 exec_always --no-startup-id "killall -q redshift; sleep 4; redshift"
 
 # =====================

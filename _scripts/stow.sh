@@ -30,18 +30,18 @@ stow_list=(
   shell
   htop
   autokey
-  alacritty-${DEVICE}-${OS}-${WM}
+  alacritty-${DEVICE}-${WM}
 )
 
-if [[ "$OS" == "ubuntu" ]]; then
-  stow_ubuntu_list=(
+if [[ "$WM" == "i3wm" ]]; then
+  stow_wm_list=(
     i3
     polybar
     redshift
     compton
   )
 
-  stow_list=( `echo ${stow_list[@]}` `echo ${stow_ubuntu_list[@]}` )
+  stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )
 fi
 
 for s in ${stow_list[@]}
@@ -52,11 +52,13 @@ do
   stow -v ${s}
 done
 
-stow_usr_list=(
-  etc-xorg-${DEVICE}-${OS}-${WM}
+# /etc
+
+stow_etc_list=(
+  etc-${DEVICE}
 )
 
-for s in ${stow_usr_list[@]}
+for s in ${stow_etc_list[@]}
 do
   echo ""
   echo "---- stowing /etc $s ----"

@@ -43,12 +43,12 @@ if ! [[ -f "$DOTFILES_PATH/.current_menu" ]]; then
   echo "2) iMac (Ubuntu) (i3wm)"
   echo "3) Macbook Air (OSX)"
   echo "4) Macbook Air (Ubuntu) (i3wm)"
+  echo "5) Macbook Air (Arch) (i3wm)"
   echo ""
   read -p "Device number: " device_opt
 
   echo $device_opt >> $DOTFILES_PATH/.current_menu
 else
-  echo "SIMMM"
   device_opt=$(cat $DOTFILES_PATH/.current_menu)
 fi
 
@@ -59,6 +59,7 @@ case $device_opt in
   "2") DEVICE="imac"        ; OS="ubuntu"; WM="i3wm" ; ./_setup-ubuntu.sh ;;
   "3") DEVICE="macbook-air" ; OS="osx"   ; WM="osx"  ; ./_setup-osx.sh    ;;
   "4") DEVICE="macbook-air" ; OS="ubuntu"; WM="i3wm" ; ./_setup-ubuntu.sh ;;
+  "5") DEVICE="macbook-air" ; OS="arch"  ; WM="i3wm" ; ./_setup-arch.sh   ;;
   *) echo "!! Invalid option !!" ;;
 esac
 
