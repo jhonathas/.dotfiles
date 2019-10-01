@@ -7,5 +7,5 @@
 ./_scripts/asdf.sh
 ./_scripts/vim.sh
 ./_scripts/config-arch.sh
-cd $PRIVATE_DOTFILE_PATH && ./setup.sh
 
+cd $PRIVATE_DOTFILE_PATH && ./setup.sh

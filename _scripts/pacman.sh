@@ -9,6 +9,14 @@ echo ""
 sudo pacman -Syu
 
 pacman_list=(
+  grub-efi-x86_64
+  efibootmgr
+  neofetch
+  sudo
+  network-manager-applet
+  networkmanager
+  cpupower
+  gnome-keyring
   openssh
   curl
   stow
@@ -23,6 +31,7 @@ pacman_list=(
   zsh
   vim
   neovim
+  xclip
   python-neovim
   fzf
   the_silver_searcher
@@ -39,20 +48,36 @@ pacman_list=(
   alsa-utils
   ttf-dejavu
   ttf-liberation
+  ttf-linux-libertine
+  ttf-mac-fonts
+  ttf-ms-fonts
+  ttf-opensans
+  ttf-ubuntu-font-family
   noto-fonts
+  gnome-screenshot
+  python-i3-py
+  xorg-util-macros
+  xorg-server
+  xorg-xinit
+  xterm
+  mesa
+  lightdm
+  lightdm-gtk-greeter
+  accountsservice
+  qutebrowser
 )
 
-for p in ${pacman_list[@]}
+for item in ${pacman_list[@]}
 do
   echo ""
-  echo "---- $p ----"
+  echo "---- $item ----"
   echo ""
 
-  pacman -Qi $p &> /dev/null
+  pacman -Qi $item &> /dev/null
 
   if [ $? -eq 0 ]; then
     echo "Ok"
   else
-    sudo pacman -S "$p" --noconfirm
+    sudo pacman -S "$item" --noconfirm
   fi
 done

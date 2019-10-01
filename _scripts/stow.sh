@@ -2,23 +2,23 @@
 
 echo ""
 echo "=============================="
-echo "Stow"
+echo "Stowing /home"
 echo "=============================="
 echo ""
 
-stow_to_remove_list=(
+remove_list=(
   ~/.config/alacritty
   ~/.config/i3
   ~/.zshrc
   ~/.config/autokey
 )
 
-for s in ${stow_to_remove_list[@]}
+for item in ${remove_list[@]}
 do
   echo ""
-  echo "---- removing $s ----"
+  echo "---- removing $item ----"
   echo ""
-  rm -rf ${s}
+  rm -rf ${item}
 done
 
 stow_list=(
@@ -44,24 +44,44 @@ if [[ "$WM" == "i3wm" ]]; then
   stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )
 fi
 
-for s in ${stow_list[@]}
+for item in ${stow_list[@]}
 do
   echo ""
-  echo "---- stowing $s ----"
+  echo "---- stowing $item ----"
   echo ""
-  stow -v ${s}
+  stow -v ${item}
 done
 
-# /etc
-
-stow_etc_list=(
-  etc-${DEVICE}
-)
-
-for s in ${stow_etc_list[@]}
-do
+if [[ "$OS" != "osx" ]]; then
   echo ""
-  echo "---- stowing /etc $s ----"
+  echo "=============================="
+  echo "Stowing /etc"
+  echo "=============================="
   echo ""
-  sudo stow -v ${s} -t /etc
-done
+
+  remove_list=(
+    /etc/default/cpupower
+    /etc/lightdm/lightdm.conf
+  )
+
+  for item in ${remove_list[@]}
+  do
+    echo ""
+    echo "---- removing $item ----"
+    echo ""
+    sudo rm -rf ${item}
+  done
+
+  stow_list=(
+    etc-${DEVICE}
+  )
+
+  for item in ${stow_list[@]}
+  do
+    echo ""
+    echo "---- stowing /etc $item ----"
+    echo ""
+    sudo stow -v ${item} -t /etc
+  done
+fi
+

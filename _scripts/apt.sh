@@ -11,10 +11,10 @@ ppa_list=(
   alacritty,ppa:mmstick76/alacritty
 )
 
-for p in ${ppa_list[@]}
+for item in ${ppa_list[@]}
 do
-  repo=$(echo $p | cut -d',' -f1)
-  repo_url=$(echo $p | cut -d',' -f2)
+  repo=$(echo $item | cut -d',' -f1)
+  repo_url=$(echo $item | cut -d',' -f2)
 
   echo ""
   echo "---- $repo ----"
@@ -95,19 +95,17 @@ apt_list=(
   compton
 )
 
-for a in ${apt_list[@]}
+for item in ${apt_list[@]}
 do
   echo ""
-  echo "---- $a ----"
+  echo "---- $item ----"
   echo ""
 
-  dpkg -s $a &> /dev/null
+  dpkg -s $item &> /dev/null
 
   if [ $? -eq 0 ]; then
     echo "Ok"
   else
-    sudo apt install -y "$a"
+    sudo apt install -y "$item"
   fi
 done
-
-sudo pip install i3-py

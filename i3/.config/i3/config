@@ -317,8 +317,7 @@ exec_always --no-startup-id "sleep 4; amixer sset 'Mic Boost' 3"
 
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-exec_always --no-startup-id "redshift -x; xrandr --output eDP --brightness 0.4"
-exec_always --no-startup-id "redshift -x; xrandr --output eDP-1 --brightness 0.4"
+exec_always --no-startup-id "redshift -x; xrandr --output $(xrandr | awk '/eDP/ {print $1}') --brightness 0.5"
 exec_always --no-startup-id "killall -q redshift; sleep 4; redshift"
 
 # =====================

@@ -7,4 +7,6 @@
 ./_scripts/stow.sh
 ./_scripts/asdf.sh
 ./_scripts/vim.sh
+./_scripts/config-ubuntu.sh
+
 cd $PRIVATE_DOTFILE_PATH && ./setup.sh

@@ -28,17 +28,17 @@ yay_list=(
   autokey
 )
 
-for y in ${yay_list[@]}
+for item in ${yay_list[@]}
 do
   echo ""
-  echo "---- $y ----"
+  echo "---- $item ----"
   echo ""
 
-  yay -Qi $y &> /dev/null
+  yay -Qi $item &> /dev/null
 
   if [ $? -eq 0 ]; then
     echo "Ok"
   else
-    yay -S "$y" --noconfirm
+    yay -S "$item" --noconfirm
   fi
 done
