@@ -55,13 +55,37 @@ fi
 export DEVICE=""; export OS=""; export WM=""
 
 case $device_opt in
-  "1") DEVICE="imac"        ; OS="osx"   ; WM="osx"  ; ./_setup-osx.sh    ;;
-  "2") DEVICE="imac"        ; OS="ubuntu"; WM="i3wm" ; ./_setup-ubuntu.sh ;;
-  "3") DEVICE="macbook-air" ; OS="osx"   ; WM="osx"  ; ./_setup-osx.sh    ;;
-  "4") DEVICE="macbook-air" ; OS="ubuntu"; WM="i3wm" ; ./_setup-ubuntu.sh ;;
-  "5") DEVICE="macbook-air" ; OS="arch"  ; WM="i3wm" ; ./_setup-arch.sh   ;;
+  "1") DEVICE="imac"        ; OS="osx"   ; WM="osx"  ;;
+  "2") DEVICE="imac"        ; OS="ubuntu"; WM="i3wm" ;;
+  "3") DEVICE="macbook-air" ; OS="osx"   ; WM="osx"  ;;
+  "4") DEVICE="macbook-air" ; OS="ubuntu"; WM="i3wm" ;;
+  "5") DEVICE="macbook-air" ; OS="arch"  ; WM="i3wm" ;;
   *) echo "!! Invalid option !!" ;;
 esac
+
+case $OS in
+	"osx")
+		./scripts/stow.sh ;;
+	"arch")
+		./scripts/pacman.sh
+		./scripts/yay.sh
+		./scripts/zsh.sh
+		./scripts/stow.sh
+		./scripts/asdf.sh
+		./scripts/vim.sh
+		./scripts/config-arch.sh ;;
+	"ubuntu")
+		./scripts/apt.sh
+		./scripts/snap.sh
+		./scripts/debs.sh
+		./scripts/zsh.sh
+		./scripts/stow.sh
+		./scripts/asdf.sh
+		./scripts/vim.sh
+		./scripts/config-ubuntu.sh
+esac
+
+cd $PRIVATE_DOTFILE_PATH && ./setup.sh
 
 # ==========================
 # Finish

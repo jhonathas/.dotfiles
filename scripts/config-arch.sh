@@ -30,6 +30,6 @@ if ! [[ -f "/etc/hostname" ]]; then
   echo "127.0.1.1	$host.localdomain	$host" | sudo tee -a /etc/hosts
 fi
 
-sudo systemctl enable mbpfan
+# sudo systemctl enable mbpfan
 sudo systemctl enable cpupower
 sudo systemctl enable powertop

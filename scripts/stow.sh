@@ -2,7 +2,7 @@
 
 echo ""
 echo "=============================="
-echo "Stowing /home"
+echo "Removing stow /home"
 echo "=============================="
 echo ""
 
@@ -21,6 +21,12 @@ do
   rm -rf ${item}
 done
 
+echo ""
+echo "=============================="
+echo "Stowing /home"
+echo "=============================="
+echo ""
+
 stow_list=(
   git
   tmux
@@ -33,6 +39,7 @@ stow_list=(
   alacritty-${DEVICE}-${WM}
 )
 
+# Only on i3wm
 if [[ "$WM" == "i3wm" ]]; then
   stow_wm_list=(
     i3
@@ -45,6 +52,7 @@ if [[ "$WM" == "i3wm" ]]; then
   stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )
 fi
 
+# Only on arch
 if [[ "$OS" == "arch" ]]; then
   stow_linux_list=(
     gtk-3
@@ -58,13 +66,14 @@ do
   echo ""
   echo "---- stowing $item ----"
   echo ""
-  stow -v ${item}
+  stow -v -d ${DOTFILES_PATH}/stow ${item} -t ~/
 done
 
+# Only on linux
 if [[ "$OS" != "osx" ]]; then
   echo ""
   echo "=============================="
-  echo "Stowing /etc"
+  echo "Remove stow /etc"
   echo "=============================="
   echo ""
 
@@ -80,6 +89,12 @@ if [[ "$OS" != "osx" ]]; then
     sudo rm -rf ${item}
   done
 
+  echo ""
+  echo "=============================="
+  echo "Stowing /etc"
+  echo "=============================="
+  echo ""
+
   stow_list=(
     etc-${DEVICE}
   )
@@ -89,7 +104,7 @@ if [[ "$OS" != "osx" ]]; then
     echo ""
     echo "---- stowing /etc $item ----"
     echo ""
-    sudo stow -v ${item} -t /etc
+    sudo stow -v ${item} -d ${DOTFILES_PATH}/stow -t /etc
   done
 fi
 

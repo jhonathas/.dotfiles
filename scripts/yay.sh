@@ -14,6 +14,7 @@ if ! [[ -f $(which yay) ]]; then
   rm -rf yay
 fi
 
+# Update packages
 yay -Syu
 
 yay_list=(
@@ -26,6 +27,7 @@ yay_list=(
   skypeforlinux
   google-chrome
   autokey
+  ttf-mac-fonts
 )
 
 for item in ${yay_list[@]}

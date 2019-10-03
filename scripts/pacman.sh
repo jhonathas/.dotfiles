@@ -6,10 +6,10 @@ echo "Installig pacman packages"
 echo "=============================="
 echo ""
 
+# Update packages
 sudo pacman -Syu
 
 pacman_list=(
-  # dependencies
   ncurses
   glu
   wxgtk2
@@ -47,7 +47,7 @@ pacman_list=(
   dbeaver
   powertop
   tmux
-  i3
+  # i3
   rofi
   compton
   upower
@@ -58,14 +58,12 @@ pacman_list=(
   ttf-dejavu
   ttf-liberation
   ttf-linux-libertine
-  ttf-mac-fonts
-  ttf-ms-fonts
   ttf-opensans
   ttf-ubuntu-font-family
   noto-fonts
   gnome-screenshot
   python-i3-py
-  xorg
+  #xorg
   xterm
   mesa
   lightdm
