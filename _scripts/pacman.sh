@@ -9,6 +9,15 @@ echo ""
 sudo pacman -Syu
 
 pacman_list=(
+  # dependencies
+  ncurses
+  glu
+  wxgtk2
+  libpng
+  libssh
+  unixodbc
+  unzip
+  ibus
   grub-efi-x86_64
   efibootmgr
   neofetch
@@ -56,15 +65,17 @@ pacman_list=(
   noto-fonts
   gnome-screenshot
   python-i3-py
-  xorg-util-macros
-  xorg-server
-  xorg-xinit
+  xorg
   xterm
   mesa
   lightdm
   lightdm-gtk-greeter
   accountsservice
   qutebrowser
+  w3m
+  ranger
+  arch-audit
+  thunar
 )
 
 for item in ${pacman_list[@]}

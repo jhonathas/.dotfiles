@@ -39,9 +39,18 @@ if [[ "$WM" == "i3wm" ]]; then
     polybar
     redshift
     compton
+    dunst
   )
 
   stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )
+fi
+
+if [[ "$OS" == "arch" ]]; then
+  stow_linux_list=(
+    gtk-3
+  )
+
+  stow_list=( `echo ${stow_list[@]}` `echo ${stow_linux_list[@]}` )
 fi
 
 for item in ${stow_list[@]}
@@ -60,7 +69,6 @@ if [[ "$OS" != "osx" ]]; then
   echo ""
 
   remove_list=(
-    /etc/default/cpupower
     /etc/lightdm/lightdm.conf
   )
 

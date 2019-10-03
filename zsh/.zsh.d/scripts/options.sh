@@ -15,20 +15,24 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fi
 fi
 
-# export LC_ALL=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # export LC_MESSAGES="C"
 # export LANG=es_US.UTF-8
 
 export EDITOR='nvim'
 export STOW_DIR=$HOME/.dotfiles
 
-if [[ "$os" == "Ubuntu" ]]; then
+if [[ -d "/usr/lib/jvm/java-11-openjdk-amd64" ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+fi
+
+if [[ -d "/usr/lib/jvm/java-12-openjdk" ]]; then
+  export JAVA_HOME="/usr/lib/jvm/java-12-openjdk"
+fi
+
+if [[ "$os" == "Ubuntu" ]]; then
   source /usr/share/doc/fzf/examples/key-bindings.zsh
 
-  alert() {
-    notify-send --icon=gtk-info Alert $1
-  }
 fi
 
 if [[ "$os" == "\"Arch Linux\"" ]]; then
@@ -36,5 +40,8 @@ if [[ "$os" == "\"Arch Linux\"" ]]; then
   source /usr/share/fzf/completion.zsh
 fi
 
-source ~/.config/tmuxinator/tmuxinator.zsh
+alert() {
+  notify-send --icon=gtk-info Alert $1
+}
 
+source ~/.config/tmuxinator/tmuxinator.zsh
