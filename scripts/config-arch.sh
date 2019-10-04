@@ -33,3 +33,4 @@ fi
 # sudo systemctl enable mbpfan
 sudo systemctl enable cpupower
 sudo systemctl enable powertop
+sudo chage -E -1 lightdm

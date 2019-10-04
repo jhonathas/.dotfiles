@@ -79,6 +79,7 @@ if [[ "$OS" != "osx" ]]; then
 
   remove_list=(
     /etc/lightdm/lightdm.conf
+    /etc/mbpfan.conf
   )
 
   for item in ${remove_list[@]}
