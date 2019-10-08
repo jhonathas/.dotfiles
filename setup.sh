@@ -43,7 +43,7 @@ if ! [[ -f "$DOTFILES_PATH/.current_menu" ]]; then
   echo "2) iMac (Ubuntu) (i3wm)"
   echo "3) Macbook Air (OSX)"
   echo "4) Macbook Air (Ubuntu) (i3wm)"
-  echo "5) Macbook Air (Arch) (i3wm)"
+  echo "5) Macbook Air (Manjaro) (i3wm)"
   echo ""
   read -p "Device number: " device_opt
 
@@ -55,25 +55,29 @@ fi
 export DEVICE=""; export OS=""; export WM=""
 
 case $device_opt in
-  "1") DEVICE="imac"        ; OS="osx"   ; WM="osx"  ;;
-  "2") DEVICE="imac"        ; OS="ubuntu"; WM="i3wm" ;;
-  "3") DEVICE="macbook-air" ; OS="osx"   ; WM="osx"  ;;
-  "4") DEVICE="macbook-air" ; OS="ubuntu"; WM="i3wm" ;;
-  "5") DEVICE="macbook-air" ; OS="arch"  ; WM="i3wm" ;;
+  "1") DEVICE="imac"        ; OS="osx"     ; WM="osx"  ;;
+  "2") DEVICE="imac"        ; OS="ubuntu"  ; WM="i3wm" ;;
+  "3") DEVICE="macbook-air" ; OS="osx"     ; WM="osx"  ;;
+  "4") DEVICE="macbook-air" ; OS="ubuntu"  ; WM="i3wm" ;;
+  "5") DEVICE="macbook-air" ; OS="manjaro" ; WM="i3wm" ;;
   *) echo "!! Invalid option !!" ;;
 esac
 
 case $OS in
 	"osx")
-		./scripts/stow.sh ;;
-	"arch")
+		./scripts/stow.sh
+    ;;
+
+	"manjaro")
 		./scripts/pacman.sh
 		./scripts/yay.sh
 		./scripts/zsh.sh
 		./scripts/stow.sh
 		./scripts/asdf.sh
 		./scripts/vim.sh
-		./scripts/config-arch.sh ;;
+		./scripts/config-manjaro.sh
+    ;;
+
 	"ubuntu")
 		./scripts/apt.sh
 		./scripts/snap.sh

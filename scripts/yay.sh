@@ -24,10 +24,9 @@ yay_list=(
   postman
   gitflow-avh
   polybar
-  skypeforlinux
+  skypeforlinux-stable-bin
   google-chrome
   autokey
-  ttf-mac-fonts
 )
 
 for item in ${yay_list[@]}

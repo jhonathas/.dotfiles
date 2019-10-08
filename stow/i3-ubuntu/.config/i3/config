@@ -1,0 +1,334 @@
+# =====================
+# General config
+# =====================
+
+# Define Cmd/Win as mod key
+set $mod Mod4
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3
+bindsym $mod+Shift+r restart
+
+# =====================
+# Appearence
+# =====================
+
+# font
+font pango:monospace 11
+
+# background images
+# exec --no-startup-id feh --bg-scale ~/.config/i3/wp/Monsoon-1-1024x576.jpg
+exec_always --no-startup-id feh --bg-scale $(shuf -n1 -e ~/.config/i3/wp/*)
+bindsym $mod+Shift+w exec --no-startup-id feh --bg-scale $(shuf -n1 -e ~/.config/i3/wp/*)
+
+# Compton
+exec_always --no-startup-id "killall -q compton; sleep 2 ; compton"
+
+# =====================
+# Floating windows
+# =====================
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# =====================
+# Applications
+# =====================
+
+# Open terminal
+bindsym $mod+Return exec alacritty
+
+# Others apps
+# set $mode_apps Apps: (c) Chrome, (s) Skype, (d) DBeaver,
+# mode "$mode_apps" {
+#   bindsym c exec --no-startup-id google-chrome, mode "default"
+#   bindsym s exec --no-startup-id skypeforlinux, mode "default"
+#   bindsym d exec --no-startup-id dbeaver, mode "default"
+
+#   # back to normal: Enter or Escape
+#   bindsym Return mode "default"
+#   bindsym Escape mode "default"
+# }
+# bindsym $mod+a mode "$mode_apps"
+
+# =====================
+# Scratchpad
+# =====================
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# remove a floating window from scratchpad
+bindsym $mod+Shift+x floating disable
+
+# set $mode_scratchpad Scratchpad: (w) WhatsApp, (s) Skype, (e) Email,
+# mode "$mode_scratchpad" {
+#   bindsym s [class="Skype"] scratchpad show, mode "default"
+#   bindsym w [class="chrome"] scratchpad show, mode "default"
+#   bindsym e [class="Mailspring"] scratchpad show, mode "default"
+
+#   # back to normal: Enter or Escape
+#   bindsym Return mode "default"
+#   bindsym Escape mode "default"
+# }
+# bindsym $mod+s mode "$mode_scratchpad"
+
+# =====================
+# Rofi menu
+# =====================
+
+bindsym $mod+space exec --no-startup-id rofi -show run -lines 5 -eh 2 -width 40 -padding 30 -opacity "85" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -font "monospace 11"
+
+# =====================
+# Windows
+# =====================
+
+# kill window
+bindsym $mod+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# toggle split orientation
+bindsym $mod+o split toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode
+  bindsym h resize shrink width 5 px or 5 ppt
+  bindsym j resize shrink height 5 px or 5 ppt
+  bindsym k resize grow height 5 px or 5 ppt
+  bindsym l resize grow width 5 px or 5 ppt
+
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape or $mod+r
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+Shift+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
+# bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Tab focus mode_toggle
+# bindsym $mod+a focus parent
+# bindsym $mod+d focus child
+
+# =====================
+# Workspaces
+# =====================
+
+# All workspaces names
+# WEB, CODING, CHAT / EMAIL, FUN
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# rename workspace
+bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace:'
+
+# Workspaces cicle
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# =====================
+# Polybar
+# =====================
+
+exec --no-startup-id polybar -r mybar
+
+# =====================
+# i3-gaps
+# =====================
+
+# you can also use any non-zero value if you'd like to have a border
+for_window [class=".*"] border pixel 2
+
+# class                 border  backgr. text    indicator child_border
+client.focused            #4c7899 #285577 #ffffff #2e9ef4   #9A93E1
+# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+# client.urgent           #2f343a #900000 #ffffff #900000   #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# client.background       #ffffff
+
+# default gaps
+gaps inner 20
+gaps outer 0
+
+# gaps mode
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+  bindsym o      mode "$mode_gaps_outer"
+  bindsym i      mode "$mode_gaps_inner"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+  bindsym plus  gaps inner current plus 5
+  bindsym minus gaps inner current minus 5
+  bindsym 0     gaps inner current set 20
+
+  bindsym Shift+plus  gaps inner all plus 5
+  bindsym Shift+minus gaps inner all minus 5
+  bindsym Shift+0     gaps inner all set 20
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+  bindsym plus  gaps outer current plus 5
+  bindsym minus gaps outer current minus 5
+  bindsym 0     gaps outer current set 10
+
+  bindsym Shift+plus  gaps outer all plus 5
+  bindsym Shift+minus gaps outer all minus 5
+  bindsym Shift+0     gaps outer all set 10
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+# Only enable gaps on a workspace when there is at least one container
+# smart_gaps on
+smart_borders on
+
+# =====================
+# Keyboard config
+# =====================
+
+# set delay and repeat
+exec --no-startup-id xset r rate 200 50
+exec --no-startup-id autokey-gtk
+
+# =====================
+# Mouse config
+# =====================
+
+focus_follows_mouse no
+mouse_warping       none
+
+# =====================
+# Power config
+# =====================
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (p) shutdown
+mode "$mode_system" {
+  bindsym l exec --no-startup-id i3lock, mode "default"
+  bindsym e exec --no-startup-id i3-msg exit, mode "default"
+  bindsym s exec --no-startup-id systemctl suspend, mode "default"
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+  bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+Escape mode "$mode_system"
+
+# =====================
+# Sound config
+# =====================
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+exec_always --no-startup-id "sleep 4; amixer sset 'Mic Boost' 3"
+
+# =====================
+# Redshift
+# =====================
+
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+exec_always --no-startup-id "redshift -x; xrandr --output $(xrandr | awk '/eDP/ {print $1}') --brightness 0.5"
+exec_always --no-startup-id "killall -q redshift; sleep 4; redshift"
+
+# =====================
+# Screenshot
+# =====================
+
+bindsym $mod+Shift+S exec gnome-screenshot -i -a
+
+# =====================
+# Alternating layout
+# =====================
+
+exec_always --no-startup-id ~/.config/i3/alternating_layouts.py
+

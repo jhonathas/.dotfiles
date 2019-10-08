@@ -7,10 +7,15 @@ echo "=============================="
 echo ""
 
 remove_list=(
+  ~/.i3
+  ~/.zshrc
+  ~/.dmenurc
   ~/.config/alacritty
   ~/.config/i3
-  ~/.zshrc
+  ~/.config/i3status
   ~/.config/autokey
+  ~/.config/compton.conf
+  ~/.config/htop/htoprc
 )
 
 for item in ${remove_list[@]}
@@ -36,29 +41,21 @@ stow_list=(
   shell
   htop
   autokey
+  dmenu
   alacritty-${DEVICE}-${WM}
 )
 
 # Only on i3wm
 if [[ "$WM" == "i3wm" ]]; then
   stow_wm_list=(
-    i3
+    i3-${OS}
+    i3status
     polybar
     redshift
     compton
-    dunst
   )
 
   stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )
-fi
-
-# Only on arch
-if [[ "$OS" == "arch" ]]; then
-  stow_linux_list=(
-    gtk-3
-  )
-
-  stow_list=( `echo ${stow_list[@]}` `echo ${stow_linux_list[@]}` )
 fi
 
 for item in ${stow_list[@]}
@@ -78,8 +75,9 @@ if [[ "$OS" != "osx" ]]; then
   echo ""
 
   remove_list=(
-    /etc/lightdm/lightdm.conf
-    /etc/mbpfan.conf
+    # /etc/mbpfan.conf
+    /etc/X11/xorg.conf.d/00-keyboard.conf
+    /etc/X11/xorg.conf.d/30-touchpad.conf
   )
 
   for item in ${remove_list[@]}
@@ -97,7 +95,7 @@ if [[ "$OS" != "osx" ]]; then
   echo ""
 
   stow_list=(
-    etc-${DEVICE}
+    etc-macbook-air-${OS}
   )
 
   for item in ${stow_list[@]}
@@ -108,4 +106,3 @@ if [[ "$OS" != "osx" ]]; then
     sudo stow -v ${item} -d ${DOTFILES_PATH}/stow -t /etc
   done
 fi
-
