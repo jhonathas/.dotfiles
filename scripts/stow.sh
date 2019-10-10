@@ -76,6 +76,7 @@ if [[ "$OS" != "osx" ]]; then
 
   remove_list=(
     # /etc/mbpfan.conf
+    /etc/environment
     /etc/X11/xorg.conf.d/00-keyboard.conf
     /etc/X11/xorg.conf.d/30-touchpad.conf
   )
