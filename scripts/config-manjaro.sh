@@ -14,5 +14,11 @@ sudo chmod 4755 /usr/share/skypeforlinux/chrome-sandbox
 # https://superuser.com/a/1235405
 sudo sed -i /usr/share/X11/locale/en_US.UTF-8/Compose -e 's/ć/ç/g' -e 's/Ć/Ç/g'
 
+# Enable some services
+sudo systemctl enable powertop
+sudo systemctl enable cpupower
+sudo systemctl enable mbpfan
+sudo systemctl enable tlp
+
 echo "Ok"
 

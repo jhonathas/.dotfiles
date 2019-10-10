@@ -27,6 +27,7 @@ yay_list=(
   skypeforlinux-stable-bin
   google-chrome
   autokey
+  mbpfan-git
 )
 
 for item in ${yay_list[@]}

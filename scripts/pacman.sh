@@ -34,6 +34,8 @@ pacman_list=(
   the_silver_searcher
   dbeaver
   powertop
+  cpupower
+  tlp
   tmux
   rofi
   python-i3-py
