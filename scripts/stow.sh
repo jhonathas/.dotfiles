@@ -10,6 +10,7 @@ remove_list=(
   ~/.i3
   ~/.zshrc
   ~/.dmenurc
+  ~/.Xresources
   ~/.config/alacritty
   ~/.config/i3
   ~/.config/i3status
@@ -53,6 +54,8 @@ if [[ "$WM" == "i3wm" ]]; then
     polybar
     redshift
     compton
+    rofi
+    xresources
   )
 
   stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )

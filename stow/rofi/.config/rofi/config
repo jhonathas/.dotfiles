@@ -1,0 +1,11 @@
+rofi.modi: drun,run,window,ssh
+rofi.lines: 5
+rofi.eh: 2
+rofi.width: 40
+rofi.padding: 30
+rofi.opacity: 85
+rofi.fg: #505050
+rofi.bg: #000000
+rofi.hlfg: #ffb964
+rofi.hlbg: #000000
+rofi.font: monospace 11

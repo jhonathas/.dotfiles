@@ -379,11 +379,9 @@ bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+m exec --no-startup-id morc_menu
 
 # lauch rofi
-bindsym $mod+space exec --no-startup-id rofi -show run -lines 5 -eh 2 -width 40 -padding 30 -opacity "85" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -font "monospace 11"
-
-# Dmenu script
-bindsym $mod+Control+m exec ./.dmenu/dmenu-tmuxinator.sh
-bindsym $mod+Control+d exec ./.dmenu/dmenu-edit-configs.sh
+bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+Control+d exec ~/.config/rofi/rofi-edit-configs.sh
+bindsym $mod+Control+m exec ~/.config/rofi/rofi-tmuxinator.sh
 
 # ==============================================================
 # Autostart appication
