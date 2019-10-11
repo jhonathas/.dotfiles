@@ -1,7 +1,8 @@
 #!/bin/bash
-# Rofi script for editing some of my more frequently edited config files.
+# Edit dotiles menu
 
-declare -nc options=("quit
+declare -nc options=(" dotfiles
+private-dotfiles
 i3
 i3status
 compton
@@ -14,8 +15,12 @@ open_alacritty() {
   exec alacritty --working-directory ~/.dotfiles -e nvim $1
 }
 
-if [ "$choice" == ' quit' ]; then
-  echo "Program terminated."
+if [ "$choice" == ' dotfiles' ]; then
+  open_alacritty
+fi
+
+if [ "$choice" == 'private-dotfiles' ]; then
+  open_alacritty
 fi
 
 if [ "$choice" == 'i3' ]; then

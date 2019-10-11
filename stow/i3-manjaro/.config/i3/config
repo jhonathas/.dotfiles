@@ -380,8 +380,13 @@ bindsym $mod+m exec --no-startup-id morc_menu
 
 # lauch rofi
 bindsym $mod+space exec --no-startup-id rofi -show run
-bindsym $mod+Control+d exec ~/.config/rofi/rofi-edit-configs.sh
-bindsym $mod+Control+m exec ~/.config/rofi/rofi-tmuxinator.sh
+bindsym $mod+Control+a exec --no-startup-id rofi -show drun
+bindsym $mod+Control+w exec --no-startup-id rofi -show window
+bindsym $mod+Control+q exec ~/.config/rofi/power-menu.sh
+bindsym $mod+Control+d exec ~/.config/rofi/dotfiles-menu.sh
+bindsym $mod+Control+m exec ~/.config/rofi/tmuxinator-menu.sh
+bindsym $mod+Control+f exec ~/.config/rofi/files-menu.sh
+bindsym $mod+Control+t exec ~/.config/rofi/terminal-menu.sh
 
 # ==============================================================
 # Autostart appication

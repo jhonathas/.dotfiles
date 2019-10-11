@@ -1,6 +1,5 @@
-
 #!/bin/bash
-# Rofi script for editing some of my more frequently edited config files.
+# Start tmuxinator menu
 
 declare -nc options=("$(
   ls .config/tmuxinator |

@@ -19,7 +19,6 @@ pacman_list=(
   unixodbc
   unzip
   # tools
-  atom
   neofetch
   stow
   git
