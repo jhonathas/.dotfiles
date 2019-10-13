@@ -22,12 +22,8 @@ export LC_ALL=en_US.UTF-8
 export EDITOR='nvim'
 export STOW_DIR=$HOME/.dotfiles
 
-if [[ -d "/usr/lib/jvm/java-11-openjdk-amd64" ]]; then
-  export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-fi
-
-if [[ -d "/usr/lib/jvm/java-12-openjdk" ]]; then
-  export JAVA_HOME="/usr/lib/jvm/java-12-openjdk"
+if [[ -d "/usr/lib/jvm/java-13-openjdk" ]]; then
+  export JAVA_HOME="/usr/lib/jvm/java-13-openjdk"
 fi
 
 if [[ "$os" == "Ubuntu" ]]; then
