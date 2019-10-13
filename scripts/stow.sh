@@ -12,6 +12,7 @@ remove_list=(
   ~/.dmenurc
   ~/.Xresources
   ~/.profile
+  ~/.config/mimeapps.list
   ~/.config/alacritty
   ~/.config/i3
   ~/.config/i3status
@@ -58,6 +59,7 @@ if [[ "$WM" == "i3wm" ]]; then
     rofi
     xresources
     profile
+    mimeapps
   )
 
   stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )
