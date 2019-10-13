@@ -11,6 +11,7 @@ remove_list=(
   ~/.zshrc
   ~/.dmenurc
   ~/.Xresources
+  ~/.profile
   ~/.config/alacritty
   ~/.config/i3
   ~/.config/i3status
@@ -56,6 +57,7 @@ if [[ "$WM" == "i3wm" ]]; then
     compton
     rofi
     xresources
+    profile
   )
 
   stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )
@@ -82,6 +84,7 @@ if [[ "$OS" != "osx" ]]; then
     /etc/environment
     /etc/X11/xorg.conf.d/00-keyboard.conf
     /etc/X11/xorg.conf.d/30-touchpad.conf
+    /etc/X11/xorg.conf.d/40-mouse.conf
   )
 
   for item in ${remove_list[@]}
@@ -99,7 +102,7 @@ if [[ "$OS" != "osx" ]]; then
   echo ""
 
   stow_list=(
-    etc-macbook-air-${OS}
+    etc-${DEVICE}-${OS}
   )
 
   for item in ${stow_list[@]}

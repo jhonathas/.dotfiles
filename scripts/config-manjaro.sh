@@ -15,10 +15,17 @@ sudo chmod 4755 /usr/share/skypeforlinux/chrome-sandbox
 sudo sed -i /usr/share/X11/locale/en_US.UTF-8/Compose -e 's/ć/ç/g' -e 's/Ć/Ç/g'
 
 # Enable some services
-sudo systemctl enable powertop
+if [[ "$DEVICE" == "macbook-air"  ]]; then
+  sudo systemctl enable powertop
+fi
 sudo systemctl enable cpupower
 sudo systemctl enable mbpfan
 sudo systemctl enable tlp
+
+# Created temp input sym link (i3status)
+temp_input=$(find /sys/devices/platform/coretemp.0/hwmon/ -name temp1_input)
+
+sudo ln -f -s $temp_input /etc/core_temp_input
 
 echo "Ok"
 
