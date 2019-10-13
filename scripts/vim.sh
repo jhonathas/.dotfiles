@@ -11,7 +11,8 @@ if ! [[ -f ~/.vim/autoload/plug.vim ]]; then
 fi
 
 if ! [[ -f ~/.local/share/nvim/site/autoload/plug.vim ]]; then
-  nvim +PlugInstall +UpdateRemotePlugins +qall
+  nvim +PlugInstall +qall
+  nvim +UpdateRemotePlugins +qall
 fi
 
 vim +PlugUpdate +qall

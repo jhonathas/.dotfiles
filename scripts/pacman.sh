@@ -40,6 +40,7 @@ pacman_list=(
   python-i3-py
   qutebrowser
   arch-audit
+  timeshift
 )
 
 for item in ${pacman_list[@]}

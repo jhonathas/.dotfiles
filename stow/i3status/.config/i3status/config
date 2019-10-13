@@ -39,7 +39,7 @@ memory {
 
 cpu_temperature 0 {
   format = " temp %degrees°C "
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
 }
 
 load {
