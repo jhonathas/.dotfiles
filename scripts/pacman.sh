@@ -30,6 +30,7 @@ pacman_list=(
   neovim
   python-neovim
   fzf
+  tk
   the_silver_searcher
   dbeaver
   powertop
@@ -41,6 +42,7 @@ pacman_list=(
   qutebrowser
   arch-audit
   timeshift
+  jdk11-openjdk
 )
 
 for item in ${pacman_list[@]}
