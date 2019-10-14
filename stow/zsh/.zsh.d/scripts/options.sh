@@ -31,7 +31,7 @@ if [[ "$os" == "Ubuntu" ]]; then
 
 fi
 
-if [[ "$os" == "\"Arch Linux\"" ]]; then
+if [[ "$os" == "\"Manjaro Linux\"" ]]; then
   source /usr/share/fzf/key-bindings.zsh
   source /usr/share/fzf/completion.zsh
 fi
