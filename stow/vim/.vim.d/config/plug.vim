@@ -21,6 +21,9 @@ if !empty(glob("/usr/local/opt/fzf"))
   Plug '/usr/local/opt/fzf'
 endif
 
+Plug 'mattn/emmet-vim'
+Plug 'dense-analysis/ale'
+Plug 'chrisbra/Colorizer'
 Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-better-default'
 Plug 'mileszs/ack.vim'

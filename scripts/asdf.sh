@@ -32,5 +32,11 @@ if ! [[ -d ~/.asdf ]]; then
   asdf global ruby 2.6.4
 
   gem install tmuxinator
+
+  npm install -g yarn
+
+  wget https://dl.genymotion.com/releases/genymotion-3.0.3/genymotion-3.0.3-linux_x64.bin
+  chmod +x genymotion-3.0.3-linux_x64.bin
+  ./genymotion-3.0.3-linux_x64.bin --destination ~/ --yes
 fi
 

@@ -116,6 +116,9 @@ bindsym $mod+minus scratchpad show
 # remove a floating window from scratchpad
 bindsym $mod+Shift+x floating disable
 
+# floating window
+bindsym $mod+Shift+space floating toggle
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
@@ -142,7 +145,6 @@ bindsym $mod+r mode "resize"
 # bindsym $mod+Shift+s layout stacking
 # bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
-# bindsym $mod+Shift+space floating toggle
 # bindsym $mod+Tab focus mode_toggle
 # bindsym $mod+a focus parent
 # bindsym $mod+d focus child
@@ -151,7 +153,7 @@ bindsym $mod+r mode "resize"
 default_border pixel 1
 default_floating_border normal
 hide_edge_borders none
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 4
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -335,7 +337,7 @@ exec --no-startup-id volumeicon
 # =====================
 
 exec_always --no-startup-id "redshift -x; killall -q redshift"
-exec_always --no-startup-id "xrandr --output $(xrandr | awk '/eDP/ {print $1}') --brightness 0.5"
+exec_always --no-startup-id "sleep 1; xrandr --output $(xrandr | awk '/eDP/ {print $1}') --brightness 0.5"
 exec_always --no-startup-id "sleep 4; redshift"
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -393,7 +395,7 @@ bindsym $mod+Control+t exec ~/.config/rofi/terminal-menu.sh
 # ==============================================================
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id sleep 1; compton -b
+exec_always --no-startup-id sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
