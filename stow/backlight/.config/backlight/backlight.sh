@@ -1,19 +1,22 @@
 #!/bin/bash
 
+OUTPUT_FILE=~/.config/backlight/_output
+BRIGHTNESS_FILE=~/.config/backlight/_brightness
+
 # Save output device
-if ! [[ -f _output ]]; then
+if ! [[ -f ${OUTPUT_FILE} ]]; then
   OUTPUT=$(xrandr | awk '/eDP/ {print $1}')
-  echo $OUTPUT > _output
+  echo $OUTPUT > $OUTPUT_FILE
 else
-  OUTPUT=$(cat _output)
+  OUTPUT=$(cat $OUTPUT_FILE)
 fi
 
 # Save current brightness
-if ! [[ -f _brightness ]]; then
-  BRIGHTNESS=`xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' '`
-  echo $brightness > _brightness
+if ! [[ -f ${BRIGHTNESS_FILE} ]]; then
+  BRIGHTNESS="0.50"
+  echo $BRIGHTNESS > $BRIGHTNESS_FILE
 else
-  BRIGHTNESS=$(cat _brightness)
+  BRIGHTNESS=$(cat $BRIGHTNESS_FILE)
 fi
 
 change_brightness() {
@@ -26,7 +29,7 @@ change_brightness() {
     exit 0
   fi
 
-  echo $total > _brightness
+  echo $total > $BRIGHTNESS_FILE
   xrandr --output $OUTPUT --brightness $total
 
   pkill dunst
