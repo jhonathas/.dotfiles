@@ -53,6 +53,7 @@ if [[ "$WM" == "i3wm" ]]; then
   stow_wm_list=(
     i3-${OS}
     i3status
+    i3exit
     polybar
     redshift
     compton
@@ -60,6 +61,7 @@ if [[ "$WM" == "i3wm" ]]; then
     xresources
     profile
     mimeapps
+    backlight
   )
 
   stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )
@@ -113,5 +115,43 @@ if [[ "$OS" != "osx" ]]; then
     echo "---- stowing /etc $item ----"
     echo ""
     sudo stow -v ${item} -d ${DOTFILES_PATH}/stow -t /etc
+  done
+fi
+
+if [[ "$WM" == "i3wm" ]]; then
+  echo ""
+  echo "=============================="
+  echo "Remove stow /usr"
+  echo "=============================="
+  echo ""
+
+  remove_list=(
+    /usr/bin/i3exit
+  )
+
+  for item in ${remove_list[@]}
+  do
+    echo ""
+    echo "---- removing $item ----"
+    echo ""
+    sudo rm -rf ${item}
+  done
+
+  echo ""
+  echo "=============================="
+  echo "Stowing /usr"
+  echo "=============================="
+  echo ""
+
+  stow_list=(
+    usr-${WM}
+  )
+
+  for item in ${stow_list[@]}
+  do
+    echo ""
+    echo "---- stowing /usr $item ----"
+    echo ""
+    sudo stow -v ${item} -d ${DOTFILES_PATH}/stow -t /usr
   done
 fi

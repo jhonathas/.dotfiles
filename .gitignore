@@ -5,3 +5,8 @@
 /autokey/.config/autokey/autokey.json~
 /autokey/.config/autokey/autokey.log
 /autokey/.config/autokey/autokey.pid
+
+# Backlight
+
+/stow/backlight/.config/backlight/_brightness
+/stow/backlight/.config/backlight/_output
