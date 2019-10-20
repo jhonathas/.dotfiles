@@ -4,12 +4,12 @@
 # Global Setup variables
 # ==========================
 
-export PRIVATE_DOTFILE_HTTPS_REPO="https://github.com/diegonogueira/private-dotfiles.git"
-export PRIVATE_DOTFILE_SSH_REPO="git@github.com:diegonogueira/private-dotfiles.git"
-export PRIVATE_DOTFILE_PATH=~/.private-dotfiles
+export PRIVATE_DOTFILE_HTTPS_REPO="https://github.com/jhonathas/.dotfiles_private.git"
+export PRIVATE_DOTFILE_SSH_REPO="git@github.com:jhonathas/.dotfiles_private.git"
+export PRIVATE_DOTFILE_PATH=~/.dotfiles_private
 
 export DOTFILES_PATH=~/.dotfiles
-export DOTFILES_SSH_REPO="git@github.com:diegonogueira/dotfiles.git"
+export DOTFILES_SSH_REPO="git@github.com:jhonathas/.dotfiles.git"
 
 # ==========================
 # Private dotfiles
@@ -44,7 +44,7 @@ if ! [[ -f "$DOTFILES_PATH/.current_menu" ]]; then
   echo "3) Macbook Air (OSX)"
   echo "4) Macbook Air (Ubuntu) (i3wm)"
   echo "5) Macbook Air (Manjaro) (i3wm)"
-  echo "6) iMac (Manjaro) (i3wm)"
+  echo "6) PC (Manjaro) (i3wm)"
   echo ""
   read -p "Device number: " device_opt
 
@@ -61,7 +61,7 @@ case $device_opt in
   "3") DEVICE="macbook-air" ; OS="osx"     ; WM="osx"  ;;
   "4") DEVICE="macbook-air" ; OS="ubuntu"  ; WM="i3wm" ;;
   "5") DEVICE="macbook-air" ; OS="manjaro" ; WM="i3wm" ;;
-  "6") DEVICE="imac"        ; OS="manjaro" ; WM="i3wm" ;;
+  "6") DEVICE="pc"          ; OS="manjaro" ; WM="i3wm" ;;
   *) echo "!! Invalid option !!" ;;
 esac
 

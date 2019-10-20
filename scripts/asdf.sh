@@ -17,26 +17,26 @@ if ! [[ -d ~/.asdf ]]; then
   asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
   bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-  asdf install erlang 22.0.1
-  asdf install elixir 1.9.1
-  asdf install redis 4.0.10
-  asdf install postgres 10.4
+  # asdf install erlang 22.0.1
+  # asdf install elixir 1.9.1
+  # asdf install redis 4.0.10
+  # asdf install postgres 10.4
   asdf install ruby 2.6.4
-  asdf install nodejs 10.16.3
+  # asdf install nodejs 10.16.3
 
-  asdf global nodejs 10.16.3
-  asdf global erlang 22.0.1
-  asdf global elixir 1.9.1
-  asdf global redis 4.0.10
-  asdf global postgres 10.4
+  # asdf global nodejs 10.16.3
+  # asdf global erlang 22.0.1
+  # asdf global elixir 1.9.1
+  # asdf global redis 4.0.10
+  # asdf global postgres 10.4
   asdf global ruby 2.6.4
 
   gem install tmuxinator
 
   npm install -g yarn
 
-  wget https://dl.genymotion.com/releases/genymotion-3.0.3/genymotion-3.0.3-linux_x64.bin
-  chmod +x genymotion-3.0.3-linux_x64.bin
-  ./genymotion-3.0.3-linux_x64.bin --destination ~/ --yes
+  # wget https://dl.genymotion.com/releases/genymotion-3.0.3/genymotion-3.0.3-linux_x64.bin
+  # chmod +x genymotion-3.0.3-linux_x64.bin
+  # ./genymotion-3.0.3-linux_x64.bin --destination ~/ --yes
 fi
 

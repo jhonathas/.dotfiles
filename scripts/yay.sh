@@ -18,7 +18,6 @@ fi
 yay -Syu
 
 yay_list=(
-  mailspring
   grv
   spotify
   postman

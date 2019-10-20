@@ -27,7 +27,7 @@ temp_input=$(find /sys/devices/platform/coretemp.0/hwmon/ -name temp1_input)
 sudo ln -f -s $temp_input /etc/core_temp_input
 
 # Change Java version
-sudo archlinux-java set java-10-openjdk
+sudo archlinux-java set java-11-openjdk
 
 # yay -S virtualbox linux52-virtualbox-host-modules
 # yay -S android-sdk android-sdk-platform-tools android-sdk-build-tools

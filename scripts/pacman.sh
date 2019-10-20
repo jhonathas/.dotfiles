@@ -24,7 +24,6 @@ pacman_list=(
   git
   alacritty
   feh
-  redshift
   nmap
   poedit
   neovim
@@ -39,7 +38,6 @@ pacman_list=(
   tmux
   rofi
   python-i3-py
-  qutebrowser
   arch-audit
   timeshift
   jdk11-openjdk
