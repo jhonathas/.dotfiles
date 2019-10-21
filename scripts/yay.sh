@@ -27,6 +27,7 @@ yay_list=(
   google-chrome
   autokey
   mbpfan-git
+  bluez-utils-compat
 )
 
 for item in ${yay_list[@]}
