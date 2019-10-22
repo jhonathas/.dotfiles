@@ -72,6 +72,7 @@ case $OS in
 		./scripts/stow.sh
 		./scripts/asdf.sh
 		./scripts/vim.sh
+    ./scripts/others.sh
     ;;
 
 	"manjaro")
@@ -82,6 +83,7 @@ case $OS in
 		./scripts/asdf.sh
 		./scripts/vim.sh
 		./scripts/config-manjaro.sh
+    ./scripts/others.sh
     ;;
 
 	"ubuntu")
@@ -93,6 +95,7 @@ case $OS in
 		./scripts/asdf.sh
 		./scripts/vim.sh
 		./scripts/config-ubuntu.sh
+    ./scripts/others.sh
 esac
 
 cd $PRIVATE_DOTFILE_PATH && ./setup.sh

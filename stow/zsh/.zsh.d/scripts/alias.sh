@@ -110,4 +110,6 @@ function tmk() {
 }
 
 # Stow
+alias stow_dropbox="stow -t ${HOME} -d ~/Dropbox/dotfiles"
 alias stow_priv="stow -t ${HOME} -d ~/.dotfiles_private"
+alias stow="stow -t ${HOME} -d ~/.dotfiles/stow"

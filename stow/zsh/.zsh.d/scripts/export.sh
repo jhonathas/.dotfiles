@@ -15,7 +15,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 export STOW_DIR=$HOME/.dotfiles/stow
 
-export HISTFILE=~/.zsh_history
+export HISTFILE=~/Dropbox/dotfiles/shell/.zsh_history
 
 export ES_JAVA_OPTS="-Xms2g -Xmx2g"
 
