@@ -39,7 +39,7 @@ brew 'grv'
 brew 'git-flow-avh'
 brew 'asdf'
 brew 'stow'
-brew 'mackup'
+brew 'nmap'
 
 # casks
 cask 'google-chrome'
