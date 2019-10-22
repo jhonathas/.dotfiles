@@ -2,9 +2,9 @@
 
 # Autokey
 
-/autokey/.config/autokey/autokey.json~
-/autokey/.config/autokey/autokey.log
-/autokey/.config/autokey/autokey.pid
+/stow/autokey/.config/autokey/autokey.json~
+/stow/autokey/.config/autokey/autokey.log
+/stow/autokey/.config/autokey/autokey.pid
 
 # Backlight
 

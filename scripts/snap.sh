@@ -11,6 +11,7 @@ snap_list=(
   grv
   spotify
   postman
+  skype
 )
 
 for s in ${snap_list[@]}

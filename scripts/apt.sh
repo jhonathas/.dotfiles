@@ -7,8 +7,7 @@ echo "=============================="
 echo ""
 
 ppa_list=(
-  speed-ricer,ppa:kgilmer/speed-ricer
-  alacritty,ppa:mmstick76/alacritty
+  ppa:mmstick76/alacritty
 )
 
 for item in ${ppa_list[@]}
@@ -75,8 +74,6 @@ apt_list=(
   gitk
   alacritty
   feh
-  xbacklight
-  redshift
   nmap
   poedit
   zsh
@@ -88,11 +85,7 @@ apt_list=(
   silversearcher-ag
   powertop
   autokey-gtk
-  # i3
-  i3-gaps
-  polybar
-  rofi
-  compton
+  alacritty
 )
 
 for item in ${apt_list[@]}

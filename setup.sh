@@ -74,7 +74,7 @@ case $OS in
 		./scripts/pacman.sh
 		./scripts/yay.sh
 		./scripts/zsh.sh
-		./scripts/stow.sh
+		./scripts/stow-manjaro.sh
 		./scripts/asdf.sh
 		./scripts/vim.sh
 		./scripts/config-manjaro.sh
@@ -85,7 +85,7 @@ case $OS in
 		./scripts/snap.sh
 		./scripts/debs.sh
 		./scripts/zsh.sh
-		./scripts/stow.sh
+		./scripts/stow-ubuntu.sh
 		./scripts/asdf.sh
 		./scripts/vim.sh
 		./scripts/config-ubuntu.sh
