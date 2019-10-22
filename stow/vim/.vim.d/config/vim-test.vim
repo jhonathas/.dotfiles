@@ -6,4 +6,3 @@ nnoremap <silent> <leader>tb :TestFile<CR>
 nnoremap <silent> <leader>ta :TestSuite<CR>
 nnoremap <silent> <leader>tr :TestLast<CR>
 nnoremap <silent> <leader>tv :TestVisit<CR>
-

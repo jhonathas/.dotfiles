@@ -6,10 +6,29 @@ cask_args appdir: '/Applications'
 # install packages
 tap 'caskroom/homebrew-cask' || true
 tap 'caskroom/versions' || true
+# tap 'tap nexeck/homebrew-tmuxinator'
 
 # install packages
+brew 'automake'
+brew 'autoconf'
+brew 'openssl'
+brew 'libyaml'
+brew 'readline'
+brew 'libxslt'
+brew 'libtool'
+brew 'unixodbc'
+brew 'wxmac'
+brew 'gnupg2'
+brew 'coreutils'
+brew 'imagemagick@6'
+brew 'graphicsmagick'
+brew 'pkg-config'
+brew 'autoenv'
+brew 'heroku/brew/heroku'
+brew 'fop'
+brew 'fzf'
+
 brew 'git'
-brew 'git-flow-avh'
 brew 'tree'
 brew 'python'
 brew 'python3'
@@ -17,6 +36,10 @@ brew 'vim'
 brew 'nvim'
 brew 'tmux'
 brew 'grv'
+brew 'git-flow-avh'
+brew 'asdf'
+brew 'stow'
+brew 'mackup'
 
 # casks
 cask 'google-chrome'
@@ -30,21 +53,22 @@ cask 'dash'
 cask 'alacritty'
 cask 'istat-menus'
 cask 'discord'
-cask 'slack'
 cask 'libreoffice'
 cask 'emacs'
 cask 'macvim'
 cask 'rowanj-gitx'
 cask 'iterm2'
 cask 'postman'
+cask 'transmission'
 cask 'poedit'
-# cask 'iris'
+cask 'whatsapp'
+cask 'docker'
+cask 'dbeaver'
 
 # mac apple store
-mas 'Airmail 3', id: 918858936
 mas 'Navicat Essentials for PostgreSQL', id: 466725643
 mas 'Magnet', id: 441258766
 mas 'Pages', id: 409201541
 mas 'Keynote', id: 409183694
 mas 'Numbers', id: 409203825
-
+mas 'kiwi-for-gmail', id: 986304488

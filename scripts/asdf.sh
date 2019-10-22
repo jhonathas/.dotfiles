@@ -7,7 +7,11 @@ echo "=============================="
 echo ""
 
 if ! [[ -d ~/.asdf ]]; then
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.4
+  if [[ ! "$(uname)" == "Darwin" ]]; then
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+    cd ~/.asdf
+    git checkout "$(git describe --abbrev=0 --tags)"
+  fi
 
   asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
   asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
@@ -34,9 +38,5 @@ if ! [[ -d ~/.asdf ]]; then
   gem install tmuxinator
 
   npm install -g yarn
-
-  # wget https://dl.genymotion.com/releases/genymotion-3.0.3/genymotion-3.0.3-linux_x64.bin
-  # chmod +x genymotion-3.0.3-linux_x64.bin
-  # ./genymotion-3.0.3-linux_x64.bin --destination ~/ --yes
 fi
 

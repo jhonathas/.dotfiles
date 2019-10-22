@@ -1,13 +1,20 @@
-unset MAILCHECK # disable "you have mail" warning
+unset MAILCHECK
 
-os=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+# Asdf
+if [[ "$(uname)" == "Darwin" ]]; then
+  . $(brew --prefix asdf)/asdf.sh
+  . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
-# asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+  ulimit -S -n 2048
+  unsetopt correctall
+  setopt +o nomatch
+else
+  . $HOME/.asdf/asdf.sh
+  . $HOME/.asdf/completions/asdf.bash
+fi
 
-# fzf (mac)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Tmuxinator
+source ~/.config/tmuxinator/tmuxinator.zsh
 
 if [[ "$(uname)" == "Darwin" ]]; then
   if [ -z "$TMUX" ]; then
@@ -15,29 +22,16 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fi
 fi
 
-export LC_ALL=en_US.UTF-8
-# export LC_MESSAGES="C"
-# export LANG=es_US.UTF-8
+# if [[ "$os" == "Ubuntu" ]]; then
+#   source /usr/share/doc/fzf/examples/key-bindings.zsh
+# fi
 
-export EDITOR='nvim'
-export STOW_DIR=$HOME/.dotfiles
-
-if [[ -d "/usr/lib/jvm/java-10-openjdk" ]]; then
-  export JAVA_HOME="/usr/lib/jvm/java-10-openjdk"
-  export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
-fi
-
-if [[ "$os" == "Ubuntu" ]]; then
-  source /usr/share/doc/fzf/examples/key-bindings.zsh
-fi
-
-if [[ "$os" == "\"Manjaro Linux\"" ]]; then
-  source /usr/share/fzf/key-bindings.zsh
-  source /usr/share/fzf/completion.zsh
-fi
+# if [[ "$os" == "\"Manjaro Linux\"" ]]; then
+#   source /usr/share/fzf/key-bindings.zsh
+#   source /usr/share/fzf/completion.zsh
+# fi
 
 alert() {
   notify-send --icon=gtk-info Alert $1
 }
 
-source ~/.config/tmuxinator/tmuxinator.zsh

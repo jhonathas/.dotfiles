@@ -39,7 +39,7 @@ if ! [[ -f "$DOTFILES_PATH/.current_menu" ]]; then
   echo ""
   echo "Choose the device to setup:"
   echo ""
-  echo "1) iMac (OSX)"
+  echo "1) PC (macOS)"
   echo "2) iMac (Ubuntu) (i3wm)"
   echo "3) Macbook Air (OSX)"
   echo "4) Macbook Air (Ubuntu) (i3wm)"
@@ -56,7 +56,7 @@ fi
 export DEVICE=""; export OS=""; export WM=""
 
 case $device_opt in
-  "1") DEVICE="imac"        ; OS="osx"     ; WM="osx"  ;;
+  "1") DEVICE="pc"          ; OS="macos"     ; WM="macos"  ;;
   "2") DEVICE="imac"        ; OS="ubuntu"  ; WM="i3wm" ;;
   "3") DEVICE="macbook-air" ; OS="osx"     ; WM="osx"  ;;
   "4") DEVICE="macbook-air" ; OS="ubuntu"  ; WM="i3wm" ;;
@@ -66,8 +66,12 @@ case $device_opt in
 esac
 
 case $OS in
-	"osx")
+	"macos")
 		./scripts/stow.sh
+		./scripts/zsh.sh
+		./scripts/stow.sh
+		./scripts/asdf.sh
+		./scripts/vim.sh
     ;;
 
 	"manjaro")
