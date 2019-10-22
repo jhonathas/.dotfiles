@@ -18,7 +18,6 @@ remove_list=(
   ~/.config/i3status
   ~/.config/autokey
   ~/.config/compton.conf
-  ~/.config/htop/htoprc
 )
 
 for item in ${remove_list[@]}
@@ -42,9 +41,6 @@ stow_list=(
   vim
   nvim
   shell
-  htop
-  autokey
-  dmenu
   alacritty-${DEVICE}-${WM}
 )
 
@@ -62,6 +58,8 @@ if [[ "$WM" == "i3wm" ]]; then
     profile
     mimeapps
     backlight
+    autokey
+    dmenu
   )
 
   stow_list=( `echo ${stow_list[@]}` `echo ${stow_wm_list[@]}` )
@@ -76,7 +74,7 @@ do
 done
 
 # Only on linux
-if [[ "$OS" != "osx" ]]; then
+if [[ "$OS" != "macos" ]]; then
   echo ""
   echo "=============================="
   echo "Remove stow /etc"
