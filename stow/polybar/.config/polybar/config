@@ -49,21 +49,21 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = pango:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-# alsa, xkeyboard, wlan, eth, filesystem, mpd, xwindow, xbacklight, powermenu
-modules-left = bspwm i3
+# bspwm, alsa, xkeyboard, wlan, eth, filesystem, mpd, xwindow, xbacklight, powermenu
+modules-left = i3
 modules-center = xwindow
-modules-right = pulseaudio memory cpu temperature battery date
+modules-right = alsa memory cpu temperature battery date
 
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-wm-restack = i3
+; wm-restack = i3
 ; override-redirect = true
 
 ;scroll-up = bspwm-desknext
@@ -265,9 +265,9 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline =
+format-underline = #7FC1CA
 
 label = %date% %time%
 
@@ -302,9 +302,10 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume = <label-volume>
+label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
+format-underline = #7FC1CA
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}

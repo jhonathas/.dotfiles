@@ -32,8 +32,8 @@ change_brightness() {
   echo $total > $BRIGHTNESS_FILE
   xrandr --output $OUTPUT --brightness $total
 
-  pkill dunst
-  notify-send "Brightness: $total %"
+  # pkill dunst
+  # notify-send "Brightness: $total %"
 }
 
 if [[ $1 == 'inc' ]]; then
@@ -49,7 +49,7 @@ if [[ $1 == 'get' ]]; then
 fi
 
 if [[ $1 == 'notify' ]]; then
-  notify-send "Brightness: $BRIGHTNESS %"
+  # notify-send "Brightness: $BRIGHTNESS %"
 fi
 
 if [[ $1 == 'set' ]]; then

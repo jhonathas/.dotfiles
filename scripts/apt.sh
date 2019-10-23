@@ -7,7 +7,8 @@ echo "=============================="
 echo ""
 
 ppa_list=(
-  ppa:mmstick76/alacritty
+  alacritty,ppa:mmstick76/alacritty
+  speed-ricer,ppa:kgilmer/speed-ricer
 )
 
 for item in ${ppa_list[@]}
@@ -86,6 +87,11 @@ apt_list=(
   powertop
   autokey-gtk
   alacritty
+  gnome-tweaks
+  i3status
+  polybar
+  tmux
+  deepin-screenshot
 )
 
 for item in ${apt_list[@]}

@@ -78,5 +78,6 @@ Plug 'terryma/vim-expand-region'
 Plug 'diegonogueira/nova-vim'
 Plug 'jnurmine/Zenburn'
 Plug 'acepukas/vim-zenburn'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()

@@ -145,10 +145,10 @@ mode "$mode_gaps_outer" {
 bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+t focus mode_toggle
+# bindsym $mod+Shift+t focus mode_toggle
 
 # toggle tabbed mode
-bindsym $mod+t layout toggle tabbed splith splitv
+# bindsym $mod+t layout toggle tabbed splith splitv
 
 # move to workspace
 bindsym $mod+1 workspace $ws1
@@ -292,6 +292,19 @@ mode "Resize Mode" {
 }
 bindsym $mod+r mode "Resize Mode"
 
+# set brightness
+set $mode_brightness Increase (k), Decrease (j)
+mode "$mode_brightness" {
+  bindsym j exec "~/.config/backlight/backlight.sh dec"
+  bindsym k exec "~/.config/backlight/backlight.sh inc"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+b exec "~/.config/backlight/backlight.sh notify", mode "$mode_brightness"
+
+exec_always --no-startup-id "~/.config/backlight/backlight.sh set"
+
 # Disable titlebar
 new_window pixel 1
 new_float pixel 1
@@ -367,26 +380,48 @@ set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urg
 set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 13, FontAwesome 13"
 
 # Configure the bar
-bar {
-  position top
-  font $i3-wm.bar.font
-  separator_symbol " "
-  status_command i3xrocks -c $i3xrocks_config
-  tray_output none
-  strip_workspace_numbers yes
 
-  colors {
-    background $i3-wm.bar.background.color
-    statusline $i3-wm.bar.statusline.color
-    separator  $i3-wm.bar.separator.color
+# bar {
+#   font pango:Source Sans Pro, IconicIcons 11
+#   i3bar_command i3bar
+#   status_command i3status
+#   position top
+#   bindsym button4 nop
+#   bindsym button5 nop
+#   strip_workspace_numbers yes
+#   colors {
+#     background #3C4C55
+#       statusline #F9FAF9
+#       separator  #556873
+#       #                  border  backgr. text
+#       focused_workspace  #F9FAF9 #7FC1CA #292F34
+#       active_workspace   #595B5B #353836 #FDF6E3
+#       inactive_workspace #595B5B #222D31 #EEE8D5
+#       binding_mode       #16a085 #2C2C2C #F9FAF9
+#       urgent_workspace   #16a085 #FDF6E3 #E5201D
+#   }
+# }
 
-    #                  BORDER  BACKGROUND TEXT
-    focused_workspace  $i3-wm.bar.workspace.focused.border.color      $i3-wm.bar.workspace.focused.background.color   $i3-wm.bar.workspace.focused.text.color
-    active_workspace   $i3-wm.bar.workspace.active.border.color       $i3-wm.bar.workspace.active.background.color    $i3-wm.bar.workspace.active.text.color
-    inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
-    urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
-  }
-}
+# bar {
+#   position top
+#   font $i3-wm.bar.font
+#   separator_symbol " "
+#   status_command i3xrocks -c $i3xrocks_config
+#   tray_output none
+#   strip_workspace_numbers yes
+
+#   colors {
+#     background $i3-wm.bar.background.color
+#     statusline $i3-wm.bar.statusline.color
+#     separator  $i3-wm.bar.separator.color
+
+#     #                  BORDER  BACKGROUND TEXT
+#     focused_workspace  $i3-wm.bar.workspace.focused.border.color      $i3-wm.bar.workspace.focused.background.color   $i3-wm.bar.workspace.focused.text.color
+#     active_workspace   $i3-wm.bar.workspace.active.border.color       $i3-wm.bar.workspace.active.background.color    $i3-wm.bar.workspace.active.text.color
+#     inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
+#     urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
+#   }
+# }
 
 # Run programs when i3 starts
 
@@ -401,6 +436,13 @@ exec --no-startup-id /usr/bin/unclutter -b
 
 # Refresh wallpaper on screen resolution change
 exec --no-startup-id /usr/bin/xeventbind resolution /usr/bin/wallpaper-refresh
+# background images
+# exec --no-startup-id feh --bg-scale ~/.config/i3/wp/Monsoon-1-1024x576.jpg
+# exec_always --no-startup-id feh --bg-scale $(shuf -n1 -e ~/.config/i3/wp/*)
+# bindsym $mod+Shift+w exec --no-startup-id feh --bg-scale $(shuf -n1 -e ~/.config/i3/wp/*)
 
 # change some keys
 exec --no-startup-id autokey-gtk
+
+# polybar
+exec --no-startup-id polybar -r mybar

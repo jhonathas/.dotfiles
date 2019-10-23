@@ -11,7 +11,6 @@ snap_list=(
   grv
   spotify
   postman
-  skype
 )
 
 for s in ${snap_list[@]}
@@ -31,6 +30,7 @@ done
 
 snap_classic_list=(
   alacritty
+  skype
 )
 
 for s in ${snap_classic_list[@]}

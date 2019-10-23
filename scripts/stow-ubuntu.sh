@@ -39,6 +39,9 @@ stow_list=(
   alacritty-${DEVICE}-i3wm
   xresources-ubuntu
   regolith
+  i3status
+  backlight
+  polybar
 )
 
 for item in ${stow_list[@]}

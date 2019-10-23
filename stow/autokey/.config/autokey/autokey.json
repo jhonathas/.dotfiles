@@ -20,8 +20,8 @@
         "menuTakesFocus": false, 
         "interfaceType": "XRecord", 
         "windowDefaultSize": [
-            428, 
-            713
+            933, 
+            1021
         ], 
         "showToolbar": true, 
         "serviceRunning": true, 
@@ -31,7 +31,7 @@
             100
         ], 
         "workAroundApps": ".*VirtualBox.*|krdc.Krdc", 
-        "hPanePosition": 115, 
+        "hPanePosition": 377, 
         "isFirstRun": true
     }, 
     "userCodeDir": null, 
