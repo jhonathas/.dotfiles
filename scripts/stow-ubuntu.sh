@@ -42,6 +42,7 @@ stow_list=(
   i3status
   backlight
   polybar
+  wallpapers
 )
 
 for item in ${stow_list[@]}

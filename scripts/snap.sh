@@ -31,6 +31,7 @@ done
 snap_classic_list=(
   alacritty
   skype
+  heroku
 )
 
 for s in ${snap_classic_list[@]}

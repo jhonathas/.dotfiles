@@ -92,6 +92,7 @@ apt_list=(
   polybar
   tmux
   deepin-screenshot
+  timeshift
 )
 
 for item in ${apt_list[@]}

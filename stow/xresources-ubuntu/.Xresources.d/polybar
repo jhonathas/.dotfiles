@@ -1,0 +1,10 @@
+polybar.bar.background.color: color_base03
+polybar.bar.background-transparent.color: color_base03_t
+polybar.bar.background-alt.color: color_base01
+polybar.workspace.focused.color: color_orange
+polybar.cyan.color: color_cyan
+polybar.magenta.color: color_magenta
+polybar.yellow.color: color_yellow
+polybar.green.color: color_green
+polybar.orange.color: color_orange
+polybar.blue.color: color_blue
