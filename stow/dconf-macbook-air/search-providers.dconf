@@ -1,0 +1,4 @@
+[/]
+disable-external=true
+disabled=@as []
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
