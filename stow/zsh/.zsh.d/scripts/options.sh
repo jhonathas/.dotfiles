@@ -20,6 +20,7 @@ export LC_ALL=en_US.UTF-8
 # export LANG=es_US.UTF-8
 
 export EDITOR='nvim'
+export TERM="xterm-256color"
 export STOW_DIR=$HOME/.dotfiles
 
 if [[ -d "/usr/lib/jvm/java-10-openjdk" ]]; then
