@@ -1,0 +1,6 @@
+[/]
+gtk-im-module='gtk-im-context-simple'
+toolkit-accessibility=false
+gtk-theme='Nordic'
+icon-theme='Paper'
+enable-animations=false

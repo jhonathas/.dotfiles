@@ -149,6 +149,8 @@ bindsym $mod+Shift+f floating toggle
 # toggle tabbed mode
 # bindsym $mod+t layout toggle tabbed splith splitv
 
+for_window [class="evolution-alarm-notify.Evolution-alarm-notify"] floating enable
+
 # move to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -381,7 +383,7 @@ set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 1
 # Run programs when i3 starts
 
 # Start the composite manager
-exec --no-startup-id compton -f --config $compton_config
+exec --no-startup-id compton --config $compton_config
 
 # Launch the shortcut Conky window on first login
 # exec --no-startup-id /usr/bin/regolith-ftue
