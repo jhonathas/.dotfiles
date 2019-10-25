@@ -160,6 +160,7 @@ bindsym $mod+Shift+f floating toggle
 
 for_window [title="AutoKey"] floating enable
 for_window [title="Reminders"] floating enable
+for_window [title="Settings"] floating enable
 
 # move to workspace
 bindsym $mod+1 workspace $ws1
