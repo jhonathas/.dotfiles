@@ -9,6 +9,7 @@ echo ""
 deb_list=(
   google-chrome-stable,https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   dbeaver-ce,https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+  skype,https://repo.skype.com/latest/skypeforlinux-64.deb
 )
 
 mkdir -p dependencies && cd dependencies

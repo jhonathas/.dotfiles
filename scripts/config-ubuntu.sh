@@ -17,4 +17,7 @@ fi
 
 echo "OK"
 
+# Disable skypes pause spotfy in call
+sudo sed -i 's/load-module module-role-cork/#load-module module-role-cork/' /etc/pulse/default.pa
+
 # sudo pip install i3-py

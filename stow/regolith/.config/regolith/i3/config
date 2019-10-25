@@ -40,6 +40,9 @@ set_from_resource $ws19 i3-wm.workspace.19.name "19"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# floating_minimum_size 75 x 50
+# floating_maximum_size 0 x 0
+
 hide_edge_borders smart
 
 # start a terminal
@@ -62,6 +65,12 @@ bindsym $mod+minus scratchpad show
 
 # remove a floating window from scratchpad
 bindsym $mod+Shift+x floating disable
+
+# read 1 character and mark the current window with this character
+bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+
+# read 1 character and go to the window with the character
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 set_from_resource $rofiTheme rofi.theme "regolith-theme"
 
@@ -149,7 +158,8 @@ bindsym $mod+Shift+f floating toggle
 # toggle tabbed mode
 # bindsym $mod+t layout toggle tabbed splith splitv
 
-for_window [class="evolution-alarm-notify.Evolution-alarm-notify"] floating enable
+for_window [title="AutoKey"] floating enable
+for_window [title="Reminders"] floating enable
 
 # move to workspace
 bindsym $mod+1 workspace $ws1

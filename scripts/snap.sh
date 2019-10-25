@@ -30,7 +30,6 @@ done
 
 snap_classic_list=(
   alacritty
-  skype
   heroku
 )
 
