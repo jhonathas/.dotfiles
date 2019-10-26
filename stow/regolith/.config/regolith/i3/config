@@ -61,7 +61,7 @@ bindsym $mod+q kill
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus scratchpad show, resize set 70 ppt 90 ppt, move position center
 
 # remove a floating window from scratchpad
 bindsym $mod+Shift+x floating disable
@@ -158,9 +158,9 @@ bindsym $mod+Shift+f floating toggle
 # toggle tabbed mode
 # bindsym $mod+t layout toggle tabbed splith splitv
 
-for_window [title="AutoKey"] floating enable
+for_window [title="AutoKey"] floating enable, resize set 70 ppt 90 ppt, move position center
 for_window [title="Reminders"] floating enable
-for_window [title="Settings"] floating enable
+for_window [title="Settings"] floating enable, resize set 70 ppt 90 ppt, move position center
 
 # move to workspace
 bindsym $mod+1 workspace $ws1
