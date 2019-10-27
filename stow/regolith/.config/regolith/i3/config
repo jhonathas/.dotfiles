@@ -61,7 +61,8 @@ bindsym $mod+q kill
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show, resize set 70 ppt 90 ppt, move position center
+#, resize set 70 ppt 90 ppt, move position center
+bindsym $mod+minus scratchpad show
 
 # remove a floating window from scratchpad
 bindsym $mod+Shift+x floating disable

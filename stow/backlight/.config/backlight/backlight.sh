@@ -48,9 +48,9 @@ if [[ $1 == 'get' ]]; then
   echo $BRIGHTNESS
 fi
 
-if [[ $1 == 'notify' ]]; then
+# if [[ $1 == 'notify' ]]; then
   # notify-send "Brightness: $BRIGHTNESS %"
-fi
+# fi
 
 if [[ $1 == 'set' ]]; then
   xrandr --output $OUTPUT --brightness $BRIGHTNESS
