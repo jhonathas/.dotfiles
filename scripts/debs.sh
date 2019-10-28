@@ -23,13 +23,13 @@ do
   echo "---- download $package ----"
   echo ""
 
-  dpkg -s $package &> /dev/null
+  # dpkg -s $package &> /dev/null
 
-  if [ $? -eq 0 ]; then
-    echo "Ok"
-  else
+  # if [ $? -eq 0 ]; then
+  #   echo "Ok"
+  # else
     wget "$package_url"
-  fi
+  # fi
 done
 
 echo ""
