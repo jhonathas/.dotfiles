@@ -2,6 +2,7 @@
 
 # Autokey
 
+/stow/autokey/.config/autokey/autokey.json
 /stow/autokey/.config/autokey/autokey.json~
 /stow/autokey/.config/autokey/autokey.log
 /stow/autokey/.config/autokey/autokey.pid
