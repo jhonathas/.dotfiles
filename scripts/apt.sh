@@ -93,6 +93,7 @@ apt_list=(
   tmux
   deepin-screenshot
   timeshift
+  mbpfan
 )
 
 for item in ${apt_list[@]}

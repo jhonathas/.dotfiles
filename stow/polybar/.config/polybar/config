@@ -69,8 +69,8 @@ tray-padding = 2
 tray-background = ${colors.background-transparent}
 
 ;wm-restack = bspwm
-;wm-restack = i3
-;override-redirect = true
+wm-restack = i3
+; override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-OUTPUT_FILE=~/.config/backlight/_output
-BRIGHTNESS_FILE=~/.config/backlight/_brightness
+OUTPUT_FILE=$(dirname $0)/_output
+BRIGHTNESS_FILE=$(dirname $0)/_brightness
 
 # Save output device
 if ! [[ -f ${OUTPUT_FILE} ]]; then

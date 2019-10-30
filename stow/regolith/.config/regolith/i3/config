@@ -159,9 +159,13 @@ bindsym $mod+Shift+f floating toggle
 # toggle tabbed mode
 # bindsym $mod+t layout toggle tabbed splith splitv
 
-for_window [title="AutoKey"] floating enable, resize set 70 ppt 90 ppt, move position center
+for_window [class="Autokey-gtk"] floating enable, resize set 70 ppt 90 ppt, move position center
 for_window [title="Reminders"] floating enable
-for_window [title="Settings"] floating enable, resize set 70 ppt 90 ppt, move position center
+for_window [class="Gnome-control-center"] floating enable, resize set 70 ppt 90 ppt, move position center
+for_window [class="Gnome-tweaks"] floating enable, resize set 70 ppt 90 ppt, move position center
+for_window [class="Gnome-system-monitor"] floating enable, resize set 70 ppt 90 ppt, move position center
+for_window [class="Software-properties-gtk"] floating enable, resize set 70 ppt 90 ppt, move position center
+for_window [class="Gnome-software"] floating enable, resize set 70 ppt 90 ppt, move position center
 
 # move to workspace
 bindsym $mod+1 workspace $ws1
