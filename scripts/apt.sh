@@ -94,6 +94,7 @@ apt_list=(
   deepin-screenshot
   timeshift
   mbpfan
+  redshift
 )
 
 for item in ${apt_list[@]}

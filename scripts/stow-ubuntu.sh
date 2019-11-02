@@ -43,6 +43,7 @@ stow_list=(
   backlight
   polybar
   wallpapers
+  redshift
 )
 
 for item in ${stow_list[@]}

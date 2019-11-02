@@ -160,12 +160,12 @@ bindsym $mod+Shift+f floating toggle
 # bindsym $mod+t layout toggle tabbed splith splitv
 
 for_window [class="Autokey-gtk"] floating enable, resize set 70 ppt 90 ppt, move position center
-for_window [title="Reminders"] floating enable
 for_window [class="Gnome-control-center"] floating enable, resize set 70 ppt 90 ppt, move position center
 for_window [class="Gnome-tweaks"] floating enable, resize set 70 ppt 90 ppt, move position center
 for_window [class="Gnome-system-monitor"] floating enable, resize set 70 ppt 90 ppt, move position center
 for_window [class="Software-properties-gtk"] floating enable, resize set 70 ppt 90 ppt, move position center
 for_window [class="Gnome-software"] floating enable, resize set 70 ppt 90 ppt, move position center
+for_window [class="Evolution-alarm-notify"] floating enable, resize set 10 ppt 20 ppt
 
 # move to workspace
 bindsym $mod+1 workspace $ws1
@@ -315,10 +315,10 @@ mode "$mode_brightness" {
   bindsym j exec "~/.config/backlight/backlight.sh dec"
   bindsym k exec "~/.config/backlight/backlight.sh inc"
 
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
+  bindsym Return exec "~/.config/backlight/backlight.sh finish", mode "default"
+  bindsym Escape exec "~/.config/backlight/backlight.sh finish", mode "default"
 }
-bindsym $mod+b exec "~/.config/backlight/backlight.sh notify", mode "$mode_brightness"
+bindsym $mod+b exec "~/.config/backlight/backlight.sh start", mode "$mode_brightness"
 
 exec_always --no-startup-id "~/.config/backlight/backlight.sh set"
 

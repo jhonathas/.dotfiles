@@ -39,6 +39,9 @@ change_brightness() {
 if [[ $1 == 'inc' ]]; then
   change_brightness +
 fi
+if [[ $1 == 'inc' ]]; then
+  change_brightness +
+fi
 
 if [[ $1 == 'dec' ]]; then
   change_brightness -
@@ -54,4 +57,14 @@ fi
 
 if [[ $1 == 'set' ]]; then
   xrandr --output $OUTPUT --brightness $BRIGHTNESS
+fi
+
+if [[ $1 == 'start' ]]; then
+  redshift -x -r
+  xrandr --output $OUTPUT --brightness $BRIGHTNESS
+  killall -p redshift
+fi
+
+if [[ $1 == 'finish' ]]; then
+  redshift &
 fi
