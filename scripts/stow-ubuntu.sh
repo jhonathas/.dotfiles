@@ -8,8 +8,8 @@ echo ""
 
 remove_list=(
   ~/.zshrc
-  ~/.config/alacritty
-  ~/.config/autokey
+  #~/.config/alacritty
+  #~/.config/autokey
   ~/.config/htop/htoprc
 )
 
@@ -35,15 +35,15 @@ stow_list=(
   nvim
   shell
   htop
-  autokey
-  alacritty-${DEVICE}-i3wm
-  xresources-ubuntu
-  regolith
-  i3status
-  backlight
-  polybar
-  wallpapers
-  redshift
+  #autokey
+  #alacritty-${DEVICE}-i3wm
+  #xresources-ubuntu
+  #regolith
+  #i3status
+  #backlight
+  #polybar
+  #wallpapers
+  #redshift
 )
 
 for item in ${stow_list[@]}

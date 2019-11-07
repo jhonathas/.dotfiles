@@ -1,34 +1,34 @@
 #!/usr/bin/env bash
 
-echo ""
-echo "=============================="
-echo "Adding apt repositories"
-echo "=============================="
-echo ""
-
-ppa_list=(
-  alacritty,ppa:mmstick76/alacritty
-  speed-ricer,ppa:kgilmer/speed-ricer
-)
-
-for item in ${ppa_list[@]}
-do
-  repo=$(echo $item | cut -d',' -f1)
-  repo_url=$(echo $item | cut -d',' -f2)
-
-  echo ""
-  echo "---- $repo ----"
-  echo ""
-
-  grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep $repo &> /dev/null
-
-  if [ $? -eq 0 ]; then
-    echo "Ok"
-  else
-    sudo add-apt-repository -y "$repo_url"
-  fi
-done
-
+# echo ""
+# echo "=============================="
+# echo "Adding apt repositories"
+# echo "=============================="
+# echo ""
+# 
+# ppa_list=(
+#   alacritty,ppa:mmstick76/alacritty
+#   speed-ricer,ppa:kgilmer/speed-ricer
+# )
+# 
+# for item in ${ppa_list[@]}
+# do
+#   repo=$(echo $item | cut -d',' -f1)
+#   repo_url=$(echo $item | cut -d',' -f2)
+# 
+#   echo ""
+#   echo "---- $repo ----"
+#   echo ""
+# 
+#   grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep $repo &> /dev/null
+# 
+#   if [ $? -eq 0 ]; then
+#     echo "Ok"
+#   else
+#     sudo add-apt-repository -y "$repo_url"
+#   fi
+# done
+# 
 echo ""
 echo "=============================="
 echo "Updating apt"
@@ -46,7 +46,8 @@ echo ""
 
 apt_list=(
   # dependencies
-  linux-headers-$(uname -r)
+  # linux-headers-$(uname -r)
+  linux-headers-generic
   build-essential
   libreadline-dev
   autoconf
@@ -66,17 +67,17 @@ apt_list=(
   x11-utils
   python-pip
   # tools
-  inxi
+  # inxi
   curl
   stow
   htop
   git
   git-flow
-  gitk
-  alacritty
-  feh
+  # gitk
+  # alacritty
+  # feh
   nmap
-  poedit
+  # poedit
   zsh
   vim
   neovim
@@ -84,17 +85,17 @@ apt_list=(
   python3-neovim
   fzf
   silversearcher-ag
-  powertop
-  autokey-gtk
-  alacritty
-  gnome-tweaks
-  i3status
-  polybar
+  #powertop
+  #autokey-gtk
+  #alacritty
+  #gnome-tweaks
+  #i3status
+  #polybar
   tmux
-  deepin-screenshot
-  timeshift
-  mbpfan
-  redshift
+  #deepin-screenshot
+  #timeshift
+  #mbpfan
+  #redshift
 )
 
 for item in ${apt_list[@]}

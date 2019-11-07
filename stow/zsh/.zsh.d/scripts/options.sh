@@ -7,6 +7,7 @@ os=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
 . $HOME/.asdf/completions/asdf.bash
 
 # fzf (mac)
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -47,3 +48,5 @@ alert() {
 }
 
 source ~/.config/tmuxinator/tmuxinator.zsh
+
+cd ~

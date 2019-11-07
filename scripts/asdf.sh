@@ -9,6 +9,8 @@ echo ""
 if ! [[ -d ~/.asdf ]]; then
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.4
 
+  source ~/.zshrc
+
   asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
   asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
   asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres.git
@@ -33,10 +35,9 @@ if ! [[ -d ~/.asdf ]]; then
 
   gem install tmuxinator
 
-  npm install -g yarn
-
-  wget https://dl.genymotion.com/releases/genymotion-3.0.3/genymotion-3.0.3-linux_x64.bin
-  chmod +x genymotion-3.0.3-linux_x64.bin
-  ./genymotion-3.0.3-linux_x64.bin --destination ~/ --yes
+  # npm install -g yarn
+  #wget https://dl.genymotion.com/releases/genymotion-3.0.3/genymotion-3.0.3-linux_x64.bin
+  # chmod +x genymotion-3.0.3-linux_x64.bin
+  # ./genymotion-3.0.3-linux_x64.bin --destination ~/ --yes
 fi
 
