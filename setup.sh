@@ -4,9 +4,9 @@
 # Global Setup variables
 # ==========================
 
-export PRIVATE_DOTFILE_HTTPS_REPO="https://github.com/diegonogueira/private-dotfiles.git"
-export PRIVATE_DOTFILE_SSH_REPO="git@github.com:diegonogueira/private-dotfiles.git"
-export PRIVATE_DOTFILE_PATH=~/.private-dotfiles
+export PRIVATE_DOTFILE_HTTPS_REPO="https://github.com/jhonathas/.dotfiles_private.git"
+export PRIVATE_DOTFILE_SSH_REPO="git@github.com:jhonathas/.dotfiles_private.git"
+export PRIVATE_DOTFILE_PATH=~/.dotfiles_private
 
 export DOTFILES_PATH=~/.dotfiles
 export DOTFILES_SSH_REPO="git@github.com:diegonogueira/dotfiles.git"

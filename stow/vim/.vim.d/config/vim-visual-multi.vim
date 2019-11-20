@@ -1,6 +1,11 @@
 let g:VM_no_meta_mappings=1
 let g:VM_sublime_mappings=1
 
+let g:VM_maps = {}
+
+let g:VM_maps["Add Cursor Down"] = ''      " start selecting down
+let g:VM_maps["Add Cursor Up"]   = ''        " start selecting up
+
 " Called once right before you start selecting multiple cursors
 function! Multiple_cursors_before()
     if exists('g:deoplete#disable_auto_complete')

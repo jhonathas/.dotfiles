@@ -6,7 +6,7 @@ nmap <leader>e <Plug>(easymotion-s)
 " nmap <leader>s <Plug>(easymotion-overwin-f)
 
 " Move to word
-map <Leader>w <Plug>(easymotion-bd-w)
+map  <Leader>w <Plug>(easymotion-bd-w)
 " nmap <Leader>W <Plug>(easymotion-overwin-w)
 " or
 " `s{char}{char}{label}`
@@ -17,8 +17,8 @@ map <Leader>w <Plug>(easymotion-bd-w)
 let g:EasyMotion_smartcase = 1
 
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <Leader><Down> <Plug>(easymotion-j)
+map <Leader><Up> <Plug>(easymotion-k)
 " map <Leader>l <Plug>(easymotion-bd-jk)
 
 " Gif config

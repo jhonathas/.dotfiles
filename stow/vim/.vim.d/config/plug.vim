@@ -1,4 +1,3 @@
-
 " download vim-plug if missing
 if empty(glob("~/.vim/autoload/plug.vim"))
   silent! execute '!curl --create-dirs -fsSLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
@@ -8,30 +7,23 @@ endif
 if empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
   silent! execute '!curl --create-dirs -fsSLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * silent! PlugInstall
-  autocmd VimEnter * silent! UpdateRemotePlugins
+  " autocmd VimEnter * silent! UpdateRemotePlugins
 endif
 
 call plug#begin('~/.vim/plugged')
 
+if !empty(glob("/usr/share/doc/fzf/examples"))
+  Plug '/usr/share/doc/fzf/examples'
+endif
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-"if !empty(glob("/usr/share/doc/fzf/examples"))
-"  Plug '/usr/share/doc/fzf/examples'
-"endif
-"
-"if !empty(glob("/usr/local/opt/fzf"))
-"  Plug '/usr/local/opt/fzf'
-"endif
-
-Plug 'mattn/emmet-vim'
-Plug 'dense-analysis/ale'
-Plug 'chrisbra/Colorizer'
-Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vim-better-default'
 Plug 'mileszs/ack.vim'
 Plug 'bkad/CamelCaseMotion'
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'
+" Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -43,9 +35,11 @@ Plug 'janko-m/vim-test'
 Plug 'rizzatti/dash.vim'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', { 'branch': 'test' }
+" Plug 'terryma/vim-multiple-cursors'
 Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-repeat'
 Plug 'svermeulen/vim-easyclip'
+" Plug 'w0rp/ale'
 Plug 'brooth/far.vim'
 Plug 'vim-scripts/CmdlineComplete'
 Plug 'kana/vim-altr'
@@ -56,6 +50,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-mix-format'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+" Plug 'takac/vim-hardtime'
 Plug 'slashmili/alchemist.vim'
 Plug 'vim-ruby/vim-ruby'
 if has('nvim')
@@ -66,6 +61,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'benmills/vimux'
+" Plug 'christoomey/vim-tmux-navigator'
 
 " Vim textobj user
 Plug 'kana/vim-textobj-user'
@@ -81,6 +77,5 @@ Plug 'terryma/vim-expand-region'
 Plug 'diegonogueira/nova-vim'
 Plug 'jnurmine/Zenburn'
 Plug 'acepukas/vim-zenburn'
-Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
